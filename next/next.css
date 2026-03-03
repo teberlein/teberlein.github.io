@@ -1,0 +1,489 @@
+/* =========================================
+   AITCAP — next.css
+   Estilos exclusivos de la página AITCAP NEXT (next.html).
+   Requiere: global.css cargado previamente.
+   Secciones:
+     1. Hero Next (fondo, badge, gradiente, botón, scroll line)
+     2. Sección "¿Para quién es NEXT?" (clases private-* reutilizadas)
+     3. Sección "¿Cómo funciona?" (next-how-it-works, grid cards)
+     4. Propuestas Verticales (proposal-*, abstract-shape, shapes)
+     5. Proceso / Steps (next-step, num-next, line-next-color)
+     6. CTA Next
+     7. Media Queries exclusivas
+   =========================================
+   NOTA sobre clases private-*:
+   .private-profile, .private-title-large, .private-divider,
+   .private-text-large se definen en private.css porque NEXT
+   las hereda visualmente del módulo Private. Al cargar ambos
+   archivos en next.html, los estilos estarán disponibles.
+   Sin embargo, como next.html NO carga private.css,
+   se incluyen aquí las definiciones completas de esas clases
+   para garantizar que funcionen de forma autónoma.
+   ========================================= */
+
+
+/* =========================================
+   1. HERO NEXT
+   ========================================= */
+
+/* Fondo específico del hero de NEXT */
+.next-hero .hero-bg {
+    background: var(--next-bg-gradient);
+}
+
+/* Badge NEXT: fondo sólido turquesa */
+.badge-next {
+    border-color: var(--accent);
+    color: var(--text-white);
+    background: var(--accent); /* Fondo sólido para el badge en Next */
+    font-weight: 700;
+}
+
+/* Gradiente de texto exclusivo NEXT */
+.text-gradient-next {
+    background: linear-gradient(90deg, #FFFFFF 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Botón primario NEXT: turquesa */
+.btn-next {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #000; /* Texto oscuro para contraste con turquesa */
+}
+.btn-next:hover {
+    background: #0ea89c;
+    box-shadow: 0 0 20px rgba(18, 186, 173, 0.4);
+    color: #fff;
+}
+
+/* Línea del scroll indicator en color NEXT */
+.line-next {
+    background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+/* Subtitle variante NEXT */
+.subtitle-next {
+    color: var(--accent);
+}
+
+
+/* =========================================
+   2. SECCIÓN "¿PARA QUIÉN ES NEXT?"
+   Clases private-* usadas también en next.html.
+   Definidas aquí para autonomía del archivo.
+   ========================================= */
+
+/* Perfil Cliente */
+.private-profile {
+    background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(80, 29, 200, 0.08) 50%, var(--bg-dark) 100%);
+    min-height: 100vh;       /* Ocupa al menos toda la altura de la pantalla */
+    display: flex;           /* Activa Flexbox */
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    padding: 0;              /* Eliminamos padding excesivo para que el centrado sea puro */
+}
+
+.private-title-large {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.private-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    margin: 0 auto 2rem;
+}
+
+.private-text-large {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .private-text-large { font-size: 1.5rem; }
+}
+
+@media (max-width: 768px) {
+    .private-profile { padding: 80px 0; }
+}
+
+
+/* =========================================
+   3. SECCIÓN "¿CÓMO FUNCIONA?" (next-how-it-works)
+   ========================================= */
+
+.next-how-it-works {
+    background: #080808; /* Fondo sólido oscuro para diferenciar */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.next-how-it-works .center-text-block {
+    max-width: 1200px;
+}
+
+/* Título grande NEXT */
+.next-title-large {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+/* Texto intro de la sección */
+.next-intro-text {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+/* --- Grid de Cards Minimalistas --- */
+.next-grid-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* --- Nueva Estética Minimalista (Línea Vertical) --- */
+.next-card-mini {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-left: 3px solid var(--accent);
+    padding: 2.5rem 0 2.5rem 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+
+    color: white;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.3;
+
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.next-card-mini:hover {
+    background: linear-gradient(90deg, rgba(18, 186, 173, 0.05) 0%, transparent 100%);
+    border-left-color: #fff;
+    padding-left: 2.5rem;
+    transform: none;
+    box-shadow: none;
+}
+
+/* --- Bloque de Cierre Statement --- */
+.next-closing-block {
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Tipografía base (Mobile) */
+.next-closing-block p {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.next-closing-block .text-accent {
+    color: var(--accent);
+}
+
+
+/* =========================================
+   4. PROPUESTAS VERTICALES (FULL-SCREEN)
+   ========================================= */
+
+/* Contenedor general sin gaps */
+.next-proposal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Sin espacio entre secciones, alternancia de color visual */
+}
+
+/* Sección individual: ocupa pantalla completa */
+.proposal-item {
+    /* OBLIGATORIO: Fuerza a la caja a tener altura física */
+    min-height: 100vh !important;
+    height: 100vh !important;
+
+    /* OBLIGATORIO: Flexbox hace que el contenido interno respete el espacio */
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+    width: 100%;
+}
+
+/* Alternancia de fondo entre ítems */
+.proposal-item:nth-child(odd) {
+    background: #050505;
+}
+.proposal-item:nth-child(even) {
+    background: #08060a; /* Un tono imperceptiblemente diferente */
+}
+
+/* Grid 2 columnas: texto | visual */
+.proposal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* Inversión de orden en filas pares */
+.proposal-grid.reverse .proposal-content {
+    order: 2;
+}
+.proposal-grid.reverse .proposal-visual {
+    order: 1;
+}
+
+/* Contenido de Texto */
+.proposal-content {
+    position: relative;
+    z-index: 2;
+}
+
+.proposal-number {
+    display: block;
+    font-family: var(--font-head);
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(18, 186, 173, 0.1);
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.proposal-content h3 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.proposal-content p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+/* --- Visuales Abstractos --- */
+.proposal-visual {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Base de la forma abstracta */
+.abstract-shape {
+    width: 300px;
+    height: 300px;
+    filter: blur(40px);
+    opacity: 0.6;
+    /* Animación de morphing líquido (override de floatShape base) */
+    animation: morphNext 7s ease-in-out infinite;
+    will-change: border-radius, transform;
+}
+
+/* --- Animación de Morphing Líquido (Desktop) --- */
+@keyframes morphNext {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    25% {
+        /* Se estira hacia arriba y derecha */
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        transform: translate(40px, -50px) rotate(15deg) scale(1.2);
+    }
+    50% {
+        /* Se aplasta hacia abajo e izquierda */
+        border-radius: 80% 20% 50% 50% / 30% 80% 40% 40%;
+        transform: translate(-30px, 40px) rotate(-10deg) scale(0.8);
+    }
+    75% {
+        /* Se mueve lateralmente */
+        border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(20px, 30px) rotate(5deg) scale(1.1);
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
+
+/* Variaciones de tiempo y dirección para que cada forma se sienta única */
+.shape-1 {
+    background: radial-gradient(circle, var(--accent), transparent 70%);
+    animation-duration: 7s;
+}
+.shape-2 {
+    background: linear-gradient(45deg, var(--accent), var(--primary));
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation-duration: 7s;
+    animation-direction: reverse; /* Gira en sentido contrario */
+}
+.shape-3 {
+    background: radial-gradient(circle, #fff, transparent 80%);
+    opacity: 0.15;
+    animation-duration: 7s;
+    animation-delay: -3s; /* Empieza ya iniciada */
+}
+.shape-4 {
+    background: conic-gradient(from 180deg, var(--accent), transparent);
+    border-radius: 50%;
+    animation-duration: 7s;
+    animation-direction: alternate; /* Va y vuelve */
+}
+
+
+/* =========================================
+   5. PROCESO / STEPS NEXT
+   ========================================= */
+
+/* Estilo específico del step en NEXT (color de acento turquesa) */
+.next-step h4 {
+    color: var(--accent);
+}
+
+/* Número grande: turquesa sutil */
+.num-next {
+    color: rgba(18, 186, 173, 0.2);
+}
+
+/* Línea separadora entre steps en color NEXT */
+.line-next-color {
+    background: rgba(18, 186, 173, 0.2);
+}
+
+
+/* =========================================
+   6. CTA NEXT
+   ========================================= */
+
+.cta-next {
+    background: linear-gradient(135deg, #0d4d48 0%, #050505 100%);
+    border: 1px solid rgba(18, 186, 173, 0.2);
+}
+
+
+/* =========================================
+   7. MEDIA QUERIES EXCLUSIVAS NEXT
+   ========================================= */
+
+/* --- Grid Cards: Tablet (2 columnas) --- */
+@media (min-width: 768px) {
+    .next-grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .next-closing-block p {
+        font-size: 2.5rem;
+    }
+
+    .next-title-large {
+        font-size: 2.5rem; /* Mantiene tamaño en desktop */
+    }
+}
+
+/* --- Grid Cards: Desktop (4 columnas) --- */
+@media (min-width: 900px) {
+
+    /* 1. Cambio de Layout: 4 ítems en línea */
+    .next-grid-cards {
+        grid-template-columns: repeat(4, 1fr); /* 1x4 */
+        gap: 1.5rem;
+    }
+
+    /* 2. Ajuste Jerárquico Statement Final */
+    .next-closing-block p {
+        font-size: 2rem; /* Reducción del ~20% */
+    }
+}
+
+/* --- Propuestas: Mobile --- */
+@media (max-width: 900px) {
+    .proposal-item {
+        min-height: auto !important;
+        height: auto !important;
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .proposal-grid,
+    .proposal-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    /* Restablecer orden: texto siempre primero en mobile */
+    .proposal-grid.reverse .proposal-content { order: 1; }
+    .proposal-grid.reverse .proposal-visual  { order: 2; }
+
+    .proposal-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proposal-number {
+        font-size: 3rem;
+    }
+
+    .proposal-content h3 {
+        font-size: 2rem;
+    }
+
+    .proposal-visual {
+        height: 250px;
+    }
+
+    .abstract-shape {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* --- Mobile general 768px --- */
+@media (max-width: 768px) {
+    .next-title-large { font-size: 1.8rem; }
+
+    /* Override de proposal-item para móvil chico */
+    .proposal-item { min-height: auto !important; padding: 80px 0; }
+
+    /* Redefine morphNext para mobile: movimientos más suaves (evita scroll horizontal) */
+    @keyframes morphNext {
+        0%   { transform: translate(0, 0) rotate(0deg) scale(1);         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        50%  { transform: translate(15px, -20px) rotate(10deg) scale(1.05); border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        100% { transform: translate(0, 0) rotate(0deg) scale(1);         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    }
+
+    .abstract-shape {
+        width: 200px;
+        height: 200px;
+        animation-duration: 7s;
+    }
+}

@@ -1,0 +1,440 @@
+/* =========================================
+   AITCAP — corporate.css
+   Estilos exclusivos de la página Corporate (corporate.html).
+   Requiere: global.css cargado previamente.
+   Secciones:
+     1.  Variables CSS (azul técnico)
+     2.  Hero Corporate
+     3.  Estructura base y utilidades
+     4.  Intro Expandida (full-screen)
+     5.  Sección Perfil ¿Para quién es Corporate?
+     6.  Áreas de Intervención Expandidas
+     7.  Columna Visual & SVG Blueprint
+     8.  CTA Corporate
+     9.  Utilidades de animación CSS (.reveal-up, .reveal-horizontal,
+         .dynamic-underline, .card-side-line)
+    10.  Media Queries exclusivas
+   =========================================
+   NOTA sobre .corp-grid:
+   Private.css también define .corp-grid pero con columnas 1.5fr/1fr.
+   Aquí se redefine como 1fr/1fr (layout simétrico de corporate.html).
+   Al cargarse solo corporate.css en esta página, no hay conflicto.
+   ========================================= */
+
+
+/* =========================================
+   1. VARIABLES CSS — Azul Técnico
+   ========================================= */
+:root {
+    /* Fondo radial: De un azul Oxford muy oscuro casi a negro espacial */
+    --corp-bg-gradient: radial-gradient(circle at 30% 20%, #0B162C 0%, #03060D 70%);
+    --corp-accent:       #3b82f6;   /* Azul técnico medio */
+    --corp-accent-light: #93c5fd;   /* Azul hielo para destellos */
+}
+
+
+/* =========================================
+   2. HERO CORPORATE
+   ========================================= */
+
+/* Fondo radial azul oscuro */
+.corp-hero .hero-bg {
+    background: var(--corp-bg-gradient);
+}
+
+/* Badge Corporate: fondo sólido azul técnico */
+.badge-corp {
+    border-color: var(--corp-accent);
+    color: var(--text-white);
+    background: var(--corp-accent);
+    letter-spacing: 0.15em;
+    font-weight: 700;
+}
+
+/* Gradiente de texto: blanco → azul hielo */
+.text-gradient-corp {
+    background: linear-gradient(90deg, #FFFFFF 0%, var(--corp-accent-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Párrafo lead del hero */
+.corp-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1; /* Gris azulado claro */
+    max-width: 700px;
+    line-height: 1.8;
+}
+
+/* Botón primario Corporate: azul técnico */
+.btn-corp {
+    background: var(--corp-accent);
+    color: white;
+    border-color: var(--corp-accent);
+}
+.btn-corp:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.4); /* Resplandor azul eléctrico */
+    color: white;
+}
+
+/* Línea del scroll indicator en color Corporate */
+.line-corp {
+    background: linear-gradient(to bottom, white, transparent);
+}
+
+/* Enlace activo en navbar */
+.active-link-corp {
+    color: var(--corp-accent) !important;
+    font-weight: 700 !important;
+    position: relative;
+}
+.active-link-corp::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--corp-accent);
+}
+
+/* Highlight en menú mobile */
+.highlight-corp {
+    color: var(--corp-accent) !important;
+}
+
+
+/* =========================================
+   3. ESTRUCTURA BASE Y UTILIDADES
+   ========================================= */
+
+/* Grid simétrico 2 columnas (override del corp-grid de private) */
+.corp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+.corp-grid.reverse .corp-text-col  { order: 2; }
+.corp-grid.reverse .corp-visual-col { order: 1; }
+
+/* Columna de texto */
+.corp-text-col { position: relative; z-index: 2; }
+
+/* Espaciador genérico */
+.spacer-small { height: 2rem; }
+
+
+/* =========================================
+   4. INTRO EXPANDIDA (Full-Screen)
+   ========================================= */
+
+.corp-intro-expanded {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #03060D; /* Fondo base azul casi negro */
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(147, 197, 253, 0.05);
+}
+
+.corp-intro-expanded h2 {
+    font-size: 3rem;
+    color: white;
+    line-height: 1.1;
+    margin: 0;
+}
+
+/* Bloque de texto dentro de las áreas expandidas */
+.corp-text-block h2 {
+    font-size: 2.5rem;
+    color: white;
+    line-height: 1.15;
+}
+
+
+/* =========================================
+   5. SECCIÓN PERFIL (¿Para quién es Corporate?)
+   ========================================= */
+
+.corp-profile-section {
+    background: #03060D;
+    min-height: 120vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
+    border-bottom: 1px solid rgba(147, 197, 253, 0.05);
+}
+
+/* Texto introductorio centrado */
+.corp-profile-intro {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    max-width: 750px;
+    margin: 0 auto 5rem auto;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* Grilla 2x2 de cards de perfil */
+.corp-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Card de Perfil */
+.corp-profile-card {
+    background: rgba(147, 197, 253, 0.01);
+    border: 1px solid rgba(147, 197, 253, 0.05);
+    padding: 3.5rem 3rem;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Línea lateral: se "dibuja" al hacer hover */
+.corp-profile-card .card-side-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--corp-accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Hover: fondo sutil, elevación y línea dibujada */
+.corp-profile-card:hover {
+    background: rgba(147, 197, 253, 0.03);
+    border-color: rgba(147, 197, 253, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+.corp-profile-card:hover .card-side-line {
+    transform: scaleY(1);
+}
+
+/* Tipografía interna de la Card */
+.corp-profile-card h4 {
+    font-size: 1.4rem;
+    color: white;
+    margin: 0 0 1rem 0;
+    font-family: var(--font-head);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+.corp-profile-card p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* =========================================
+   6. ÁREAS DE INTERVENCIÓN EXPANDIDAS
+   ========================================= */
+
+.corp-areas-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sección individual tipo full-screen */
+.corp-area-expanded {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+    border-bottom: 1px solid rgba(147, 197, 253, 0.03);
+    background: #03060D;
+}
+
+/* Fondo alterno ligeramente más claro */
+.corp-area-expanded.alt-bg {
+    background: #060B14; /* Azul marino un pelo más claro */
+}
+
+/* Label de categoría de cada área */
+.corp-area-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #64748b; /* Slate gray */
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Título de cada área */
+.corp-area-expanded h3 {
+    font-size: 2.2rem;
+    color: white;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Párrafo de cada área */
+.corp-area-expanded p {
+    font-size: 1.15rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+
+/* =========================================
+   7. COLUMNA VISUAL & SVG BLUEPRINT
+   ========================================= */
+
+/* Contenedor de la columna visual */
+.corp-visual-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+/* SVG Blueprint: color dinámico vía currentColor */
+.tech-svg {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    color: #60a5fa; /* Azul eléctrico — tiñe todas las líneas via currentColor */
+    overflow: visible;
+}
+
+
+/* =========================================
+   8. CTA CORPORATE
+   ========================================= */
+
+.cta-corp {
+    background: linear-gradient(135deg, #0B162C 0%, #03060D 100%);
+    border: 1px solid rgba(147, 197, 253, 0.1);
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-corp h2 { font-size: 2.2rem; text-align: center; }
+.cta-corp p  { margin: 0 auto auto !important; max-width: 700px; text-align: center; color: #cbd5e1; }
+.cta-corp .cta-group-primary { justify-content: center !important; width: 100%; display: flex; }
+
+
+/* =========================================
+   9. UTILIDADES DE ANIMACIÓN CSS
+   ========================================= */
+
+/* --- Subrayado Dinámico (activado por JS con .is-visible) --- */
+.dynamic-underline {
+    position: relative;
+    display: inline-block;
+}
+.dynamic-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: left center;
+}
+.dynamic-underline.is-visible::after {
+    transform: scaleX(1);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- Reveal Vertical (activado por JS con GSAP) --- */
+/* Estado inicial oculto; GSAP anima a y:0, opacity:1 */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* --- Reveal Horizontal Técnico (activado por JS con GSAP) --- */
+/* Estado inicial oculto; GSAP anima a x:0, opacity:1 */
+.reveal-horizontal {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+
+/* =========================================
+   10. MEDIA QUERIES EXCLUSIVAS CORPORATE
+   ========================================= */
+
+/* --- Profile grid: 900px --- */
+@media (max-width: 900px) {
+    .corp-profile-grid {
+        gap: 1.5rem;
+    }
+    .corp-profile-card {
+        padding: 2.5rem 2rem;
+    }
+}
+
+/* --- Profile grid: 768px (1 columna) --- */
+@media (max-width: 768px) {
+    .corp-profile-grid {
+        grid-template-columns: 1fr;
+    }
+    .corp-profile-section {
+        min-height: auto;
+        padding: 100px 0;
+    }
+    .corp-profile-intro {
+        margin-bottom: 3rem;
+    }
+}
+
+/* --- Layout general corp: 900px --- */
+@media (max-width: 900px) {
+    /* Grid a columna simple */
+    .corp-grid,
+    .corp-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .corp-grid.reverse .corp-text-col  { order: 1; }
+    .corp-grid.reverse .corp-visual-col { order: 2; }
+
+    /* Secciones full-screen pasan a altura auto */
+    .corp-intro-expanded,
+    .corp-area-expanded {
+        min-height: auto;
+        padding: 80px 0;
+        text-align: center;
+    }
+    .corp-intro-expanded h2 { font-size: 2.2rem; }
+
+    /* Párrafos centrados */
+    .corp-area-expanded p { margin: 0 auto; }
+
+    /* Visual más pequeño */
+    .corp-visual-col { height: 250px; }
+    .tech-svg        { max-width: 200px; }
+
+    /* Título de bloque de texto */
+    .corp-text-block h2 { font-size: 1.8rem; }
+
+    /* CTA compacto */
+    .cta-corp { padding: 4rem 1.5rem !important; }
+}

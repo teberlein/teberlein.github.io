@@ -1,0 +1,811 @@
+/* =========================================
+   AITCAP — index.css
+   Estilos exclusivos de la Homepage (index.html).
+   Requiere: global.css cargado previamente.
+   Secciones:
+     1. Hero Home
+     2. Manifesto
+     3. Ecosystem Cards
+     4. Sección Problema (Narrativa)
+     5. Badges Carousel (Ecosistema)
+     6. Diferenciales
+     7. Método (Sticky Layout)
+     8. CTA Doble Columna
+     9. Footer Brand
+    10. Utilidades exclusivas
+    11. Media Queries exclusivas
+   ========================================= */
+
+
+/* =========================================
+   1. HERO HOME
+   ========================================= */
+
+/* hero-container: wrapper de posición solo en home */
+.hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* desktop-only: utilitario de visibilidad usado en nav */
+.desktop-only {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .desktop-only {
+        display: flex;
+    }
+    /* Para el enlace de contacto (elemento inline) */
+    a.desktop-only {
+        display: inline-block;
+    }
+}
+
+
+/* =========================================
+   2. MANIFESTO
+   ========================================= */
+.manifesto-grid { display: grid; gap: 2rem; }
+.manifesto-title h2 { font-size: 2.5rem; line-height: 1; color: white; }
+.manifesto-text p.lead { font-size: 1.25rem; color: white; margin-bottom: 1rem; font-weight: 500; }
+.manifesto-text p { color: var(--text-gray); }
+
+
+/* =========================================
+   3. ECOSYSTEM CARDS
+   ========================================= */
+
+/* --- Grid de Cards --- */
+.cards-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: stretch; }
+
+.card {
+    background: rgba(255,255,255,0.03); border: 1px solid var(--border-light);
+    padding: 2.5rem; border-radius: 8px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column; height: 100%;
+}
+.card:hover { border-color: var(--accent); background: rgba(255,255,255,0.05); }
+.card-top { flex-grow: 1; }
+.card-icon { font-size: 2rem; margin-bottom: 1.5rem; }
+.card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: white; }
+.card h3 span { color: var(--primary); }
+.card-next h3 span { color: var(--accent); }
+.card p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 2rem; }
+.link-arrow { margin-top: auto; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.5rem; color: white; }
+.link-arrow .arr { transition: transform 0.3s; color: var(--accent); }
+.card:hover .link-arrow .arr { transform: translateX(5px); }
+
+
+/* =========================================
+   4. SECCIÓN PROBLEMA (NARRATIVA SCROLL)
+   ========================================= */
+.problem-section {
+    background: #050505;
+    position: relative;
+    width: 100%;
+}
+
+.problem-container {
+    width: 100%;
+    height: 100vh; /* Ocupa toda la pantalla al fijarse */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.problem-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 900px;
+}
+
+.problem-line {
+    font-family: var(--font-head);
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: white;
+    opacity: 0; /* Estado inicial oculto */
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin: 0;
+}
+
+/* Estado atenuado para líneas pasadas */
+.dimmed {
+    opacity: 0.3 !important;
+    transform: translateY(0) !important;
+    filter: blur(1px); /* Toque elegante */
+}
+
+/* Highlight final */
+.highlight-criterio {
+    color: white; /* Inicia blanco */
+    display: inline-block;
+    font-weight: 800;
+}
+
+@media (max-width: 900px) {
+    .problem-container {
+        height: auto;       /* Ya no forzamos 100vh */
+        min-height: 60vh;   /* Altura mínima suficiente */
+        padding: 4rem 0;    /* Un poco de aire arriba y abajo */
+    }
+
+    .problem-content {
+        gap: 1.5rem;
+    }
+
+    .problem-line {
+        font-size: 1.6rem; /* Texto un poco más chico */
+    }
+}
+
+
+/* =========================================
+   5. BADGES CAROUSEL (ECOSISTEMA)
+   ========================================= */
+
+.badges-section {
+    width: 100%;
+    height: 100vh; /* Alto exacto de pantalla */
+    min-height: 700px; /* Evita que se rompa en pantallas muy bajas */
+    background: #050505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.badges-layout {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra todo el bloque verticalmente */
+    padding-top: var(--nav-height); /* Compensa el header fijo */
+}
+
+/* --- Intro Styles (Integrado) --- */
+.ecosystem-intro {
+    text-align: center;
+    padding: 20px 20px 10px; /* Menos padding abajo */
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.ecosystem-intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem; /* Margen reducido */
+    color: white;
+    white-space: nowrap; /* Fuerza una sola línea en desktop */
+}
+
+.section-desc {
+    font-size: 1rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Carousel Area --- */
+.badges-carousel-area {
+    position: relative;
+    width: 100%;
+    flex-grow: 1; /* Ocupa el espacio restante */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* Wrapper de las cards */
+.badges-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 550px;
+}
+
+/* Estilo Base del Badge Card */
+.badge-card {
+    position: absolute;
+    width: 90%;
+    max-width: 500px; /* Un poco más anchas */
+    height: 85%; /* Más altas (antes 80%) */
+    max-height: 550px; /* Aumentado de 450px a 550px */
+    background: rgba(20, 20, 25, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3rem; /* Más padding interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+    transform: scale(0.8) translateX(0);
+}
+
+.badge-tags-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.2rem;
+}
+
+/* Badge Principal */
+.badge-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--accent);
+    border: 1px solid rgba(18, 186, 173, 0.4);
+    background: rgba(18, 186, 173, 0.08);
+    padding: 6px 14px;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+
+.badge-title {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 0.3rem;
+    margin-top: 0.4rem;
+    line-height: 1.1;
+}
+
+.product-subtitle {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #a78bfa;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+}
+
+.badge-desc {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    margin-bottom: 2.6rem;
+    line-height: 1.5;
+}
+
+.btn-badge {
+    min-width: 180px;
+    padding: 12px 24px;
+    font-size: 0.85rem;
+}
+
+/* Backgrounds de cada card */
+.badge-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; opacity: 0.15; border-radius: 20px;
+}
+.bg-next    { background: radial-gradient(circle at top right, var(--accent), transparent); }
+.bg-private { background: radial-gradient(circle at top right, var(--primary), transparent); }
+.bg-corp    { background: radial-gradient(circle at top right, #204099, transparent); }
+.bg-tech    { background: radial-gradient(circle at top right, #7000ff, transparent); }
+
+/* --- Navegación Carousel --- */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    transition: 0.3s;
+    display: flex; align-items: center; justify-content: center;
+}
+.nav-arrow:hover { background: white; color: black; }
+.prev-arrow { left: 20px; }
+.next-arrow { right: 20px; }
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    display: flex; gap: 8px; z-index: 10;
+}
+.indicator {
+    width: 30px; height: 3px; background: rgba(255,255,255,0.2);
+    cursor: pointer; transition: 0.3s;
+}
+.indicator.active { background: var(--accent); }
+
+
+/* =========================================
+   6. DIFERENCIALES HOMEPAGE
+   ========================================= */
+
+.diferenciales {
+    background: #050505;
+    position: relative;
+}
+
+.diff-header {
+    margin-bottom: 4rem;
+}
+
+.diff-title {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 0;
+}
+
+/* Grilla de 3 Columnas */
+.diff-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Mobile First */
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo de cada Pilar */
+.diff-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 2.5rem; /* Un poco más de padding arriba para la línea */
+    border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    position: relative; /* Necesario para ubicar la línea decorativa */
+}
+
+.diff-item:hover {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Títulos en Blanco + Línea decorativa Turquesa */
+.diff-item h3 {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    color: white; /* Vuelta al blanco para sobriedad */
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    position: relative;
+    padding-top: 1.5rem; /* Espacio para la línea */
+}
+
+/* Línea decorativa (El toque de color) */
+.diff-item h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px; /* Línea corta y elegante */
+    height: 3px;
+    background: var(--accent); /* Color Turquesa */
+    border-radius: 2px;
+}
+
+.diff-item p {
+    font-size: 1rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   7. MÉTODO (STICKY LAYOUT)
+   ========================================= */
+
+.method-section {
+    background: radial-gradient(circle at 0% 50%, #0f0b29 0%, #050505 80%);
+    position: relative;
+    padding: 100px 0;
+}
+
+.method-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 60vw;  /* Ocupa el 60% del ancho de la pantalla */
+    height: 60vw; /* Cuadrado relativo */
+    max-width: 600px; /* Tope máximo */
+    max-height: 600px;
+
+    /* Centrado vertical y movido sutilmente a la izquierda */
+    transform: translateY(-50%) translateX(-20%);
+
+    /* El degradado violeta */
+    background: radial-gradient(circle, rgba(80, 29, 200, 0.25) 0%, transparent 70%);
+
+    filter: blur(80px); /* Suavizado */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.method-grid {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* --- Columna Izquierda (Fija y centrada) --- */
+.method-sticky-col {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    z-index: 10;
+}
+
+.method-header {
+    text-align: left;
+}
+
+.method-header h2 {
+    font-size: 2.5rem;
+    color: white;
+    line-height: 1.1;
+}
+
+/* Lista de Pasos (Nav) */
+.method-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 2rem;
+}
+
+.nav-step {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+    cursor: default;
+    transition: all 0.4s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.step-num {
+    font-size: 0.9rem;
+    font-weight: 700;
+    opacity: 0.5;
+    font-family: var(--font-head);
+    letter-spacing: 0.05em;
+}
+
+/* Estado Activo (Controlado por JS) */
+.nav-step.active {
+    color: white;
+    font-weight: 700;
+    transform: translateX(10px); /* Sutil movimiento */
+}
+.nav-step.active .step-num {
+    color: var(--accent);
+    opacity: 1;
+}
+
+/* --- Columna Derecha (Scroll) --- */
+.method-scroll-col {
+    display: flex;
+    flex-direction: column;
+    padding-top: 45vh;
+    padding-bottom: 0;
+}
+
+.method-block {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    opacity: 0.2;
+    transition: opacity 0.5s ease;
+}
+
+.method-block:last-child {
+    height: 100vh;
+    min-height: 100vh;
+    margin-bottom: 0;
+}
+
+.method-block.active {
+    opacity: 1;
+}
+
+.block-content h3 {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.block-content p {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+    max-width: 450px;
+}
+
+
+/* =========================================
+   8. CTA DOBLE COLUMNA (HOME)
+   ========================================= */
+
+/* Contenedor Grid Principal */
+.cta-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile first: 1 columna */
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Modificadores para igualar alturas y espaciados internos en ambas tarjetas */
+.cta-grid .cta-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%; /* Obliga a ambas a tener la misma altura */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+
+/* Empujamos los botones y el disclaimer hacia el fondo para que queden alineados */
+.cta-grid .cta-card .cta-buttons {
+    margin-top: auto;
+}
+
+/* --- Estilos específicos para la Tarjeta Corporativa --- */
+.cta-corporate {
+    /* Degradado sutil mezclando tu turquesa con el fondo oscuro */
+    background: linear-gradient(135deg, rgba(18, 186, 173, 0.12) 0%, rgba(5, 5, 5, 0.95) 100%);
+    border: 1px solid rgba(18, 186, 173, 0.2); /* Borde con un tinte turquesa base */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta-corporate .btn-outline-white:hover {
+    background: var(--accent); /* Se llena de turquesa */
+    border-color: var(--accent);
+    color: #000; /* Texto oscuro para máximo contraste y legibilidad */
+    box-shadow: 0 0 20px rgba(18, 186, 173, 0.4); /* Efecto neón/glow */
+}
+
+
+/* =========================================
+   9. FOOTER BRAND (EXCLUSIVO HOME)
+   Nota: .footer-brand aparece en todas las páginas
+   pero no tiene estilos propios definidos en el CSS
+   original. No requiere reglas aquí.
+   ========================================= */
+
+
+/* =========================================
+   10. MEDIA QUERIES EXCLUSIVAS DEL INDEX
+   ========================================= */
+
+/* --- Carousel: Mobile --- */
+@media (max-width: 768px) {
+    .ecosystem-intro { padding-bottom: 10px; }
+    .ecosystem-intro h2 { white-space: normal; font-size: 1.8rem; }
+    .badge-card { width: 85%; padding: 2rem; height: auto; min-height: 350px; max-height: 450px; }
+    .nav-arrow { display: none; } /* Ocultar flechas en mobile, usar dots */
+    .carousel-indicators { bottom: 10px; }
+    .badge-tags-wrapper { gap: 8px; margin-bottom: 1.2rem; }
+    .badge-tag { font-size: 0.65rem; padding: 5px 10px; }
+    .product-subtitle { font-size: 0.9rem; margin-bottom: 1.2rem; }
+
+    /* Restaurar flechas en mobile (override del display:none anterior) */
+    .nav-arrow {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        background: rgba(20, 20, 25, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        z-index: 20;
+    }
+    .prev-arrow { left: 5px; }
+    .next-arrow { right: 5px; }
+
+    /* Ajustar tarjeta para dar espacio a las flechas */
+    .badge-card {
+        width: 80%;
+        padding: 2rem 1.5rem;
+    }
+
+    .badge-title { font-size: 1.8rem; }
+}
+
+/* --- Carousel: Mobile/Tablet corte 900px --- */
+@media (max-width: 900px) {
+
+    /* 1. Quitamos la altura de pantalla completa (100vh) */
+    .badges-section {
+        height: auto !important;
+        min-height: auto !important;
+        padding-bottom: 3rem !important;
+    }
+
+    /* 2. Eliminar padding superior de badges-layout */
+    .badges-layout {
+        padding-top: 0 !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+    }
+
+    /* 3. Disminuir espacio del carousel area */
+    .badges-carousel-area {
+        flex-grow: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        height: auto !important;
+        min-height: 400px;
+    }
+
+    /* Ajuste extra para el intro (Título) */
+    .ecosystem-intro {
+        padding: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Ocultamos los indicadores */
+    .carousel-indicators {
+        display: none !important;
+    }
+}
+
+/* --- Carousel: pantallas muy pequeñas --- */
+@media (max-width: 380px) {
+    .badge-card { width: 85%; }
+}
+
+/* --- Carousel: Desktop --- */
+@media (min-width: 1024px) {
+    .prev-arrow { left: 10%; }
+    .next-arrow { right: 10%; }
+}
+
+/* --- Diferenciales: Desktop 3 columnas --- */
+@media (min-width: 900px) {
+    .diff-grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* --- Cards: Tablet 2 columnas, Desktop 4 columnas --- */
+@media (min-width: 768px) {
+    .manifesto-grid { grid-template-columns: 1fr 2fr; align-items: center; }
+    .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .cards-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* --- CTA Grid: Tablet y Desktop --- */
+@media (min-width: 900px) {
+    .cta-grid {
+        grid-template-columns: repeat(2, 1fr); /* Divide en 50% / 50% */
+        gap: 3rem;
+    }
+    /* Pequeño ajuste en desktop para que el texto no quede tan estirado */
+    .cta-grid .cta-card p {
+        max-width: 90%;
+    }
+}
+
+/* --- Método: Mobile responsive --- */
+@media (max-width: 900px) {
+
+    .method-section {
+        height: auto;
+        padding: 60px 0;
+        overflow: visible;
+    }
+
+    /* Reset del Grid a Columna Simple */
+    .method-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* --- Header (Antes Sticky) --- */
+    .method-sticky-col {
+        position: relative;
+        top: 0;
+        height: auto;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2rem;
+        z-index: 2;
+    }
+
+    .method-header {
+        text-align: center;
+    }
+
+    /* Ocultamos la navegación de pasos en mobile */
+    .method-nav {
+        display: none;
+    }
+
+    /* --- Columna de Contenido --- */
+    .method-scroll-col {
+        padding-top: 0;
+        padding-bottom: 0;
+        gap: 1rem;
+    }
+
+    /* --- Tarjetas (Steps) --- */
+    .method-block {
+        min-height: 35vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        /* Estado inicial para animación JS Mobile */
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    /* Reset del hack del último hijo de desktop */
+    .method-block:last-child {
+        height: auto;
+        min-height: 35vh;
+        margin-bottom: 0;
+    }
+
+    /* Números decorativos via pseudo-elementos */
+    .method-block#step-1::before { content: "01"; }
+    .method-block#step-2::before { content: "02"; }
+    .method-block#step-3::before { content: "03"; }
+
+    .method-block::before {
+        font-family: var(--font-head);
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--accent);
+        opacity: 0.3;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .block-content p {
+        font-size: 1.1rem;
+    }
+}

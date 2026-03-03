@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITCAP Private & Institutional</title>
+    <meta name="description" content="Asesoramiento financiero personalizado para personas y empresas con patrimonios superiores a USD 50.000. Estrategia y gestión profesional.">
+    <link rel="icon" type="image/png" href="../assets/isotipo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="private.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="../index/index.html" class="logo-container">
+                <img src="../assets/isotipo.png" alt="AITCAP Icon" class="logo-iso">
+                <img src="../assets/logotipo-text.png" alt="AITCAP" class="logo-text">
+            </a>
+            
+            <ul class="nav-links desktop-only">
+                <li><a href="../index/index.html">Inicio</a></li>
+                <li><a href="../next/next.html">Next</a></li>
+                <li><a href="../private/private.html" class="active-link-private">Private & Institutional</a></li>
+                <li><a href="../corporate/corporate.html">Corporate</a></li>
+                <li><a href="../tech/tech.html">Tech & Global</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <a href="#contacto" class="btn-header-contact desktop-only" style="visibility: hidden;">Contacto</a>
+                <button class="hamburger" id="menuToggle" aria-label="Menú">
+                    <span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-links">
+            <a href="../index/index.html" class="m-link">Inicio</a>
+            <a href="../next/next.html" class="m-link">Next</a>
+            <a href="../private/private.html" class="m-link highlight-private">Private & Institutional</a>
+            <a href="../corporate/corporate.html" class="m-link">Corporate</a>
+            <a href="../tech/tech.html" class="m-link">Tech & Global</a>
+        </div>
+        <div class="mobile-footer">
+            <p>Partners Oficiales</p>
+            <div class="partners-row"><span>BALANZ</span> / <span>LBO</span></div>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero private-hero">
+            <div class="hero-bg" id="privateHeroBg"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge reveal badge-private">AITCAP PRIVATE & INSTITUTIONAL</span>
+                    <h1 class="hero-title reveal">
+                        INVERSIONES 
+                        <span class="text-gradient-private">AVANZADAS</span><br>
+                    </h1>
+                    <p class="hero-text reveal private-lead">
+                        Asesoramiento en inversiones con estrategias a medida y acompañamiento profesional 1 a 1.
+                    </p>
+                    <div class="hero-actions reveal">
+                        <a href="https://wa.me/5493415975693?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20AITCAP%20Private" target="_blank" class="btn btn-primary btn-private">Diseñar mi estrategia</a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="line line-private"></div>
+            </div>
+        </section>
+
+        <section class="section-padding private-profile">
+            <div class="container center-text-block" data-scroll>
+                <h2 class="private-title-large ux-text">¿PARA QUIÉN ES PRIVATE & INSTITUTIONAL?</h2>
+                <div class="private-divider ux-text"></div>
+                <p class="private-text-large ux-text">
+                    AITCAP P&I es un servicio exclusivo para individuos de alto patrimonio y empresas. <br> <br>
+                    P&I se centra en la planificación patrimonial y el desarrollo de estrategias financieras avanzadas.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding private-intro">
+            <div class="container">
+                <div class="private-intro-grid">
+                    <div class="intro-header" data-scroll>
+                        <h2 class="private-title-accent ux-text">LA TRANQUILIDAD DE DELEGAR<br>A PROFESIONALES</h2>
+                    </div>
+                    <div class="intro-content" data-scroll>
+                        <p class="lead-text ux-text">Tu patrimonio merece una estrategia</p>
+                        <p class="ux-text">En Private delegás la ejecución diaria y contás con un equipo que planifica, monitorea y ajusta tu cartera según tus objetivos.</p>
+                        <ul class="private-check-list">
+                            <li class="ux-text">Trato directo con la mesa</li>
+                            <li class="ux-text">Planificación fiscal y sucesoria</li>
+                            <li class="ux-text">Estrategias diseñadas a medida</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="private-scroll-container">
+            
+            <section class="private-section section-1">
+                <div class="container private-grid">
+                    <div class="private-text-col" data-private-scroll>
+                        <span class="private-label ux-text">ADMINISTRACIÓN DE CARTERAS</span>
+                        <h2 class="ux-text">Delegación profesional</h2>
+                        <div class="divider-small ux-text"></div>
+                        <p class="ux-text">Delegá la operatoria diaria en un equipo profesional que ejecuta y monitorea tu cartera según tus objetivos y perfil de riesgo.</p>
+                    </div>
+                    <div class="private-visual-col" data-private-visual>
+                        <div class="abstract-visual visual-orb ux-visual ux-float"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="private-section section-2">
+                <div class="container private-grid reverse">
+                    <div class="private-text-col" data-private-scroll>
+                        <span class="private-label ux-text">ESTRATEGIA INTEGRAL</span>
+                        <h2 class="ux-text">Planificación patrimonial</h2>
+                        <div class="divider-small ux-text"></div>
+                        <p class="ux-text">Diseñamos carteras estratégicas que contemplan tus necesidades de liquidez, tu horizonte temporal y tus objetivos patrimoniales. Cada cartera se arma desde cero, sin soluciones genéricas.</p>
+                    </div>
+                    <div class="private-visual-col" data-private-visual>
+                        <div class="abstract-visual visual-target ux-visual ux-float">
+                            <div class="circle c1 ux-parallax" data-speed="0.08"></div>
+                            <div class="circle c2 ux-parallax" data-speed="0.04"></div>
+                            <div class="circle c3 ux-parallax" data-speed="0.02"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="private-section section-3">
+                <div class="container private-grid">
+                    <div class="private-text-col" data-private-scroll>
+                        <span class="private-label ux-text">EFICIENCIA NORMATIVA</span>
+                        <h2 class="ux-text">Planificación fiscal</h2>
+                        <div class="divider-small ux-text"></div>
+                        <p class="ux-text">Trabajamos la estructura impositiva de tus inversiones para maximizar tu rentabilidad, siempre dentro del marco normativo vigente y en coordinación con tus asesores.</p>
+                    </div>
+                    <div class="private-visual-col" data-private-visual>
+                        <div class="abstract-visual visual-grid ux-visual ux-float">
+                            <div class="grid-line ux-parallax" data-speed="0.06"></div>
+                            <div class="grid-line ux-parallax" data-speed="0.04"></div>
+                            <div class="grid-line ux-parallax" data-speed="0.02"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="private-section section-4">
+                <div class="container private-grid reverse">
+                    <div class="private-text-col" data-private-scroll>
+                        <span class="private-label ux-text">INFRAESTRUCTURA & CUSTODIA</span>
+                        <h2 class="ux-text">Tecnología institucional</h2>
+                        <div class="divider-small ux-text"></div>
+                        <p class="ux-text">Acceso a una plataforma personalizada powered by LBO. Garantizamos transparencia total, trazabilidad y seguridad para tus activos en cada operación.</p>
+                    </div>
+                    <div class="private-visual-col" data-private-visual>
+                        <div class="abstract-visual visual-tech ux-visual ux-float">
+                            <div class="tech-dot d1 ux-parallax" data-speed="0.05"></div>
+                            <div class="tech-dot d2 ux-parallax" data-speed="-0.03"></div>
+                            <div class="tech-dot d3 ux-parallax" data-speed="0.07"></div>
+                            <div class="tech-line ux-parallax" data-speed="0.02"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <section class="section-padding private-corporate">
+            <div class="container">
+                <div class="corp-grid">
+                    <div class="corp-content" data-scroll>
+                        <h2 class="ux-text">SOLUCIONES CORPORATIVAS</h2>
+                        
+                        <div class="corp-features">
+                            <div class="corp-item">
+                                <h4 class="ux-text">Capacitaciones In-Company</h4>
+                                <p class="ux-text">Programas bonificados de educación financiera para directivos y colaboradores.</p>
+                            </div>
+                            <div class="corp-item">
+                                <h4 class="ux-text">Planificación Societaria</h4>
+                                <p class="ux-text">Estrategias de inversión alineadas a los ciclos de liquidez de la compañía.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="corp-visual" data-scroll>
+                        <div class="abstract-visual visual-growth ux-visual ux-float">
+                            <div class="growth-bar b1 ux-parallax" data-speed="0.03"></div>
+                            <div class="growth-bar b2 ux-parallax" data-speed="0.06"></div>
+                            <div class="growth-bar b3 ux-parallax" data-speed="0.09"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="cta-section">
+            <div class="container">
+                <div class="cta-card cta-private" data-scroll>
+                    <h2 class="ux-text">AGENDÁ UNA REUNIÓN CON LA MESA</h2>
+                    <p class="ux-text">Analicemos tu situación actual y definamos juntos la mejor estrategia.</p>
+                    
+                    <div class="cta-group-primary ux-text">
+                        <a href="https://wa.me/5493415975693?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20AITCAP%20Private" target="_blank" class="btn btn-primary btn-private">Coordinar reunión</a>
+                    </div>
+                    
+                    <small class="micro-copy ux-text">AITCAP actúa como productor y asesor en plataformas reguladas.</small>
+                </div>
+            </div>
+        </section>
+        
+        <a href="https://wa.me/5493415975693?text=Hola%2C%20quiero%20asesoramiento%20Private%20%26%20Institutional" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.506-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.084 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+        </a>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="../index/index.html" class="logo-container footer-logo">
+                        <img src="../assets/isotipo.png" alt="AITCAP Icon" class="logo-iso">
+                        <img src="../assets/logotipo-text.png" alt="AITCAP" class="logo-text">
+                    </a>
+                    <p>Finance Lab.</p>
+                    <p class="copyright-text">&copy; 2026 AITCAP. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Ecosistema</h4>
+                    <ul>
+                        <li><a href="../next/next.html">AITCAP Next</a></li>
+                        <li><a href="../private/private.html">Private & Institutional</a></li>
+                        <li><a href="../corporate/corporate.html">Corporate</a></li>
+                        <li><a href="../tech/tech.html">Tech & Global</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>Rosario, Santa Fe, Argentina</p>
+                    <p>+54 9 3415 97-5693</p>
+                    <div class="socials">
+                        <a href="#">LI</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-regulators">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.argentina.gob.ar/cnv" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-1.png" alt="Comisión Nacional de Valores" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.byma.com.ar" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-2.png" alt="BYMA" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.mae.com.ar" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-3.png" alt="MAE" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://balanz.com/" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-4.png" alt="Balanz" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://matbarofex.com.ar/" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-5.png" alt="Matba Rofex" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.bcr.com.ar/" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-6.png" alt="Bolsa de Comercio de Rosario" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cadab.org.ar" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-7.png" alt="Cámara de Agentes de Bolsa" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://lbo.com" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-8.png" alt="LBO" loading="lazy">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../global.js" defer></script>
+    <script src="private.js" defer></script>
+</body>
+</html>

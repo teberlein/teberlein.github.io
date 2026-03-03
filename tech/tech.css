@@ -1,0 +1,397 @@
+/* =========================================
+   AITCAP — tech.css
+   Estilos exclusivos de la página Tech & Global (tech.html).
+   Requiere: global.css cargado previamente.
+   Secciones:
+     1.  Variables CSS (indigo / deep violet)
+     2.  Hero Tech
+     3.  Propuestas Verticales (bloques 100vh alternados)
+     4.  Grid Tech y columnas
+     5.  Jerarquía tipográfica interna de propuestas
+     6.  SVG Abstracto
+     7.  Perfil ¿Para quién es Tech? (tech-profile)
+     8.  CTA Tech
+     9.  Utilidades de animación CSS (.reveal-up, .dynamic-underline)
+    10.  Media Queries exclusivas
+   =========================================
+   NOTAS:
+   - .reveal-up y .dynamic-underline se definen aquí como estados
+     iniciales CSS. El JS de tech activa las animaciones con GSAP
+     y agrega .is-visible al .dynamic-underline.
+   - .alt-bg siempre calificado como .tech-proposal-item.alt-bg
+     → sin conflicto con .corp-area-expanded.alt-bg de corporate.
+   - .delay-1/2/3/4 no tienen CSS propio: son tokens leídos por JS.
+   ========================================= */
+
+
+/* =========================================
+   1. VARIABLES CSS — Indigo / Deep Violet
+   ========================================= */
+:root {
+    /* Fondo radial: oscuro con centro superior derecho índigo */
+    --tech-bg-gradient:  radial-gradient(circle at 75% 25%, #2e1065 0%, #030305 70%);
+    --tech-accent:       #818cf8;   /* Indigo brillante (highlight) */
+    --tech-accent-dark:  #4f46e5;   /* Indigo profundo */
+}
+
+
+/* =========================================
+   2. HERO TECH
+   ========================================= */
+
+/* Fondo radial indigo oscuro */
+.tech-hero .hero-bg {
+    background: var(--tech-bg-gradient);
+}
+
+/* Badge Tech: indigo profundo */
+.badge-tech {
+    border-color: rgba(129, 140, 248, 0.4);
+    color: var(--text-white);
+    background: rgba(79, 70, 229);
+    letter-spacing: 0.15em;
+}
+
+/* Gradiente de texto: blanco → indigo brillante */
+.text-gradient-tech {
+    background: linear-gradient(90deg, #FFFFFF 0%, var(--tech-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Párrafo lead del hero */
+.tech-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 700px;
+    line-height: 1.8;
+}
+
+/* Botón primario Tech: indigo profundo */
+.btn-tech {
+    background: var(--tech-accent-dark);
+    color: white;
+    border-color: var(--tech-accent-dark);
+}
+.btn-tech:hover {
+    background: var(--tech-accent);
+    border-color: var(--tech-accent);
+    box-shadow: 0 0 25px rgba(129, 140, 248, 0.4);
+    color: white;
+}
+
+/* Línea del scroll indicator en color Tech */
+.line-tech {
+    background: linear-gradient(to bottom, var(--tech-accent), transparent);
+}
+
+/* Enlace activo en navbar */
+.active-link-tech {
+    color: var(--tech-accent) !important;
+    font-weight: 700 !important;
+    position: relative;
+}
+.active-link-tech::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--tech-accent);
+}
+
+/* Highlight en menú mobile */
+.highlight-tech {
+    color: var(--tech-accent) !important;
+}
+
+
+/* =========================================
+   3. PROPUESTAS VERTICALES (100vh alternados)
+   ========================================= */
+
+/* Contenedor vertical sin gaps */
+.tech-proposals-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sección individual full-screen */
+.tech-proposal-item {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+    background: #030305;
+    border-bottom: 1px solid rgba(129, 140, 248, 0.03);
+}
+
+/* Fondo alterno sutil */
+.tech-proposal-item.alt-bg {
+    background: #06050a;
+}
+
+
+/* =========================================
+   4. GRID TECH Y COLUMNAS
+   ========================================= */
+
+/* Grid asimétrico: más espacio al texto */
+.tech-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 5rem;
+    align-items: center;
+    width: 100%;
+}
+.tech-grid.reverse .tech-text-col  { order: 2; }
+.tech-grid.reverse .tech-visual-col { order: 1; }
+
+/* Columna de texto */
+.tech-text-col { z-index: 2; }
+
+/* Label de categoría (no usado en HTML actual, reservado) */
+.tech-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--tech-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Título H3 dentro de cada propuesta */
+.tech-text-col h3 {
+    font-size: 2.2rem;
+    color: white;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Lista de ítems dentro de propuestas */
+.tech-list {
+    margin-top: 2rem;
+    list-style: none;
+    padding: 0;
+}
+.tech-list li {
+    font-size: 1.15rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.tech-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background: var(--tech-accent);
+    border-radius: 50%;
+}
+.tech-list li strong {
+    color: white;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   5. JERARQUÍA TIPOGRÁFICA INTERNA
+   ========================================= */
+
+/* Número gigante de bajo contraste */
+.tech-number-large {
+    display: block;
+    font-family: var(--font-head);
+    font-size: 5rem;
+    font-weight: 900;
+    color: rgba(129, 140, 248, 0.08); /* Indigo muy sutil */
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+/* Subtítulo destacado en indigo */
+.tech-subtitle-strong {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    color: var(--tech-accent);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+
+/* Párrafo descriptivo */
+.tech-desc {
+    font-size: 1.15rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    max-width: 550px;
+    margin: 0;
+}
+
+
+/* =========================================
+   6. SVG ABSTRACTO
+   ========================================= */
+
+/* Contenedor visual */
+.tech-visual-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+/* SVG con color indigo inyectado via currentColor */
+.tech-abstract-svg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    color: var(--tech-accent);
+    overflow: visible;
+}
+
+
+/* =========================================
+   7. PERFIL ¿PARA QUIÉN ES TECH?
+   ========================================= */
+
+.tech-profile {
+    background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(129, 140, 248, 0.08) 50%, var(--bg-dark) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+
+.tech-title-large {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.tech-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--tech-accent);
+    margin: 0 auto 2rem;
+}
+
+.tech-text-large {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   8. CTA TECH
+   ========================================= */
+
+.cta-tech {
+    background: linear-gradient(135deg, #1e1145 0%, #030305 100%);
+    border: 1px solid rgba(129, 140, 248, 0.15);
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cta-tech h2 { font-size: 2.2rem; text-align: center; }
+.cta-tech p  { margin: 0 auto auto !important; max-width: 700px; text-align: center; color: #cbd5e1; }
+.cta-tech .cta-group-primary { justify-content: center !important; width: 100%; display: flex; gap: 1rem; }
+
+
+/* =========================================
+   9. UTILIDADES DE ANIMACIÓN CSS
+   ========================================= */
+
+/* Estado inicial para reveal-up (GSAP anima a y:0, opacity:1) */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* Subrayado dinámico — activado por JS con .is-visible */
+.dynamic-underline {
+    position: relative;
+    display: inline-block;
+}
+.dynamic-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--tech-accent); /* Indigo en tech (vs blanco en corporate) */
+    transform: scaleX(0);
+    transform-origin: left center;
+}
+.dynamic-underline.is-visible::after {
+    transform: scaleX(1);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+/* =========================================
+   10. MEDIA QUERIES EXCLUSIVAS TECH
+   ========================================= */
+
+/* --- Perfil: Desktop amplía texto --- */
+@media (min-width: 768px) {
+    .tech-text-large { font-size: 1.5rem; }
+}
+
+/* --- Layout general tech: 900px --- */
+@media (max-width: 900px) {
+
+    /* Grid a columna simple */
+    .tech-grid,
+    .tech-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .tech-grid.reverse .tech-text-col  { order: 1; }
+    .tech-grid.reverse .tech-visual-col { order: 2; }
+
+    /* Secciones full-screen pasan a auto */
+    .tech-proposal-item {
+        min-height: auto;
+        padding: 80px 0;
+    }
+
+    /* Título más pequeño en mobile */
+    .tech-text-col h3 { font-size: 2rem; }
+
+    /* Número grande reducido */
+    .tech-number-large {
+        font-size: 4rem;
+        margin-bottom: 0.2rem;
+    }
+
+    /* Subtítulo ligeramente menor */
+    .tech-subtitle-strong {
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Descripción centrada */
+    .tech-desc {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    /* Visual más compacto */
+    .tech-visual-col     { height: 250px; }
+    .tech-abstract-svg   { max-width: 200px; }
+}

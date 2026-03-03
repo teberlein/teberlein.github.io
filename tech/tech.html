@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITCAP Tech & Global</title>
+    <meta name="description" content="Asesoramiento financiero para profesionales que operan en el ecosistema tecnológico y entornos internacionales.">
+    <link rel="icon" type="image/png" href="../assets/isotipo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="tech.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="../index/index.html" class="logo-container">
+                <img src="../assets/isotipo.png" alt="AITCAP Icon" class="logo-iso">
+                <img src="../assets/logotipo-text.png" alt="AITCAP" class="logo-text">
+            </a>
+            
+            <ul class="nav-links desktop-only">
+                <li><a href="../index/index.html">Inicio</a></li>
+                <li><a href="../next/next.html">Next</a></li>
+                <li><a href="../private/private.html">Private & Institutional</a></li>
+                <li><a href="../corporate/corporate.html">Corporate</a></li>
+                <li><a href="../tech/tech.html" class="active-link-tech">Tech & Global</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <a href="#contacto" class="btn-header-contact desktop-only" style="visibility: hidden;">Contacto</a>
+                <button class="hamburger" id="menuToggle" aria-label="Menú">
+                    <span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-links">
+            <a href="../index/index.html" class="m-link">Inicio</a>
+            <a href="../next/next.html" class="m-link">Next</a>
+            <a href="../private/private.html" class="m-link">Private & Institutional</a>
+            <a href="../corporate/corporate.html" class="m-link">Corporate</a>
+            <a href="../tech/tech.html" class="m-link highlight-tech">Tech & Global</a>
+        </div>
+        <div class="mobile-footer">
+            <p>Partners Oficiales</p>
+            <div class="partners-row"><span>BALANZ</span> / <span>LBO</span></div>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero tech-hero">
+            <div class="hero-bg" id="techHeroBg"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge reveal badge-tech">AITCAP TECH & GLOBAL</span>
+                    <h1 class="hero-title reveal">
+                        FINANZAS<span class="text-gradient-tech"> GLOBALES</span>
+                    </h1>
+                    <p class="hero-text reveal tech-lead">
+                        Si trabajás para el exterior o facturás en distintas monedas, te ayudamos a ordenar tus operaciones.
+                    </p>
+                    <div class="hero-actions reveal">
+                        <a href="https://wa.me/5493415975693?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20AITCAP%20Tech%20%26%20Global" class="btn btn-primary btn-tech">Hablar con un asesor</a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="line line-tech"></div>
+            </div>
+        </section>
+
+        <section class="tech-profile">
+            <div class="container center-text-block" data-scroll>
+                <h2 class="tech-title-large">¿PARA QUIÉN ES TECH & GLOBAL?</h2>
+                <div class="tech-divider"></div>
+                <div class="tech-text-large">
+                    <p>Para profesionales y equipos que operan globalmente.</p>
+                    <p class="mt-4">Si trabajás para el exterior, facturás en dólares o cobrás a través de plataformas internacionales, este servicio es para vos.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="tech-proposals-wrapper">
+            
+            <section class="tech-proposal-item">
+                <div class="container tech-grid">
+                    <div class="tech-text-col">
+                        <span class="tech-number-large reveal-up">01</span>
+                        <h3 class="reveal-up delay-1">Gestión de cobros internacionales</h3>
+                        <h4 class="tech-subtitle-strong reveal-up delay-2">Cobrá mejor, con menos fricciones</h4>
+                        <p class="tech-desc reveal-up delay-3">Te ayudamos a optimizar tus cobros desde el exterior, pagar menos comisiones y elegir las mejores plataformas según tu flujo de ingresos.</p>
+                    </div>
+                    <div class="tech-visual-col reveal-up delay-4">
+                        <svg class="tech-abstract-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.8"/>
+                            
+                            <line x1="100" y1="20" x2="100" y2="180" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
+                            <line x1="20" y1="100" x2="180" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
+                            
+                            <ellipse cx="100" cy="100" rx="40" ry="80" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                            
+                            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                            <ellipse cx="100" cy="100" rx="80" ry="55" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+
+                            <circle cx="100" cy="20" r="3" fill="currentColor"/>
+                            <circle cx="100" cy="180" r="3" fill="currentColor"/>
+                            <circle cx="60" cy="100" r="3" fill="currentColor"/>
+                            <circle cx="140" cy="100" r="3" fill="currentColor"/>
+                            <circle cx="128" cy="43" r="2.5" fill="currentColor" opacity="0.8"/>
+                            <circle cx="72" cy="157" r="2.5" fill="currentColor" opacity="0.8"/>
+                            <circle cx="100" cy="100" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tech-proposal-item alt-bg">
+                <div class="container tech-grid reverse">
+                    <div class="tech-text-col">
+                        <span class="tech-number-large reveal-up">02</span>
+                        <h3 class="reveal-up delay-1">Cuentas globales y fintech</h3>
+                        <h4 class="tech-subtitle-strong reveal-up delay-2">Armá un sistema que funcione</h4>
+                        <p class="tech-desc reveal-up delay-3">Onboarding y configuración de cuentas globales y plataformas fintech adaptadas a tu realidad profesional.</p>
+                    </div>
+                    <div class="tech-visual-col reveal-up delay-4">
+                        <!-- <svg class="tech-abstract-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="100,20 160,50 160,120 100,180 40,120 40,50" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+                            <polygon points="100,40 140,65 140,110 100,150 60,110 60,65" fill="currentColor" opacity="0.05" stroke="currentColor" stroke-width="1"/>
+                            <line x1="100" y1="20" x2="100" y2="180" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.5"/>
+                            <line x1="40" y1="85" x2="160" y2="85" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.5"/>
+                            <circle cx="100" cy="100" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="100" cy="100" r="4" fill="currentColor"/>
+                        </svg> -->
+                        <svg class="tech-abstract-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.4"/>
+                            <circle cx="100" cy="100" r="50" fill="none" stroke="currentColor" stroke-width="1" opacity="0.2"/>
+                            <circle cx="100" cy="20" r="4" fill="currentColor"/>
+                            <circle cx="170" cy="140" r="3" fill="currentColor" opacity="0.8"/>
+                            <circle cx="30" cy="140" r="5" fill="currentColor"/>
+                            <circle cx="100" cy="100" r="6" fill="currentColor"/>
+                            <line x1="100" y1="20" x2="100" y2="100" stroke="currentColor" stroke-width="1.5" opacity="0.8"/>
+                            <line x1="170" y1="140" x2="100" y2="100" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+                            <line x1="30" y1="140" x2="100" y2="100" stroke="currentColor" stroke-width="1.5" opacity="0.9"/>
+                            <path d="M 30 140 Q 100 180 170 140" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tech-proposal-item">
+                <div class="container tech-grid">
+                    <div class="tech-text-col">
+                        <span class="tech-number-large reveal-up">03</span>
+                        <h3 class="reveal-up delay-1">Asesoramiento tributario</h3>
+                        <h4 class="tech-subtitle-strong reveal-up delay-2">Entendé las reglas del juego</h4>
+                        <p class="tech-desc reveal-up delay-3">Acompañamiento inicial para comprender las implicancias fiscales de operar en múltiples jurisdicciones y evitar errores comunes.</p>
+                    </div>
+                    <div class="tech-visual-col reveal-up delay-4">
+                        <svg class="tech-abstract-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="100,40 160,70 100,100 40,70" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.9"/>
+                            <polygon points="100,80 160,110 100,140 40,110" fill="currentColor" opacity="0.05" stroke="currentColor" stroke-width="1"/>
+                            <polygon points="100,120 160,150 100,180 40,150" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.4"/>
+                            <line x1="100" y1="40" x2="100" y2="180" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                            <circle cx="100" cy="70" r="3" fill="currentColor"/>
+                            <circle cx="100" cy="110" r="3" fill="currentColor" opacity="0.6"/>
+                            <circle cx="100" cy="150" r="3" fill="currentColor" opacity="0.3"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tech-proposal-item alt-bg">
+                <div class="container tech-grid reverse">
+                    <div class="tech-text-col">
+                        <span class="tech-number-large reveal-up">04</span>
+                        <h3 class="reveal-up delay-1">Research aplicado</h3>
+                        <h4 class="tech-subtitle-strong reveal-up delay-2">Elegí las herramientas correctas</h4>
+                        <p class="tech-desc reveal-up delay-3">Seguimos de cerca nuevas soluciones fintech y tendencias del sector para que puedas elegir cómo organizar y resguardar tu capital entre cuentas globales, bancos y wallets.</p>
+                    </div>
+                    <div class="tech-visual-col reveal-up delay-4">
+                        <svg class="tech-abstract-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+                            <circle cx="100" cy="100" r="35" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.6"/>
+                            <line x1="30" y1="100" x2="170" y2="100" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                            <line x1="100" y1="30" x2="100" y2="170" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                            <polyline points="50,120 80,90 110,130 160,60" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.9"/>
+                            <circle cx="50" cy="120" r="3" fill="currentColor"/>
+                            <circle cx="80" cy="90" r="3" fill="currentColor"/>
+                            <circle cx="110" cy="130" r="3" fill="currentColor"/>
+                            <circle cx="160" cy="60" r="4" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <section class="tech-proposal-item">
+                <div class="container tech-grid">
+                    <div class="tech-text-col">
+                        <span class="tech-number-large reveal-up">05</span>
+                        <h3 class="dynamic-underline reveal-up delay-1">Resguardo y organización del capital</h3>
+                        <h4 class="tech-subtitle-strong reveal-up delay-2">Protegé y organizá tu capital</h4>
+                        <p class="tech-desc reveal-up delay-3">Métodos eficientes para distribuir y resguardar valor entre bancos, wallets y cuentas globales, integrando mundo fiat y activos digitales con lógica patrimonial.</p>
+                    </div>
+                    <div class="tech-visual-col reveal-up delay-4">
+                        <svg class="tech-abstract-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="80" y="40" width="40" height="40" rx="4" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
+                            <rect x="40" y="120" width="40" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.8"/>
+                            <rect x="120" y="120" width="40" height="40" rx="4" fill="currentColor" opacity="0.9"/>
+                            <path d="M 100 80 V 100 H 60 V 120" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
+                            <path d="M 100 80 V 100 H 140 V 120" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
+                            <circle cx="100" cy="100" r="3" fill="currentColor"/>
+                            <circle cx="60" cy="120" r="2" fill="currentColor"/>
+                            <circle cx="140" cy="120" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+            </section> -->
+
+        </div>
+
+        <section id="contacto" class="cta-section">
+            <div class="container">
+                <div class="cta-card cta-tech reveal-up">
+                    <h2>OPTIMICEMOS TU ESTRUCTURA GLOBAL</h2>
+                    <p>Coordinemos una conversación para evaluar tu esquema actual de cobros, activos digitales y organización financiera internacional.</p>
+                    
+                    <div class="cta-group-primary">
+                        <a href="https://wa.me/5493415975693?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20AITCAP%20Tech%20%26%20Global" target="_blank" class="btn btn-primary btn-tech">Iniciar conversación</a>
+                    </div>
+                    
+                    <small class="micro-copy">Operamos a través de Agentes de Liquidación y Compensación regulados por CNV.</small>
+                </div>
+            </div>
+        </section>
+
+        <a href="https://wa.me/5493415975693?text=Hola%2C%20busco%20asesoramiento%20para%20profesionales%20Tech%20%26%20Global" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.506-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.084 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+        </a>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="../index/index.html" class="logo-container footer-logo">
+                        <img src="../assets/isotipo.png" alt="AITCAP Icon" class="logo-iso">
+                        <img src="../assets/logotipo-text.png" alt="AITCAP" class="logo-text">
+                    </a>
+                    <p>Finance Lab.</p>
+                    <p class="copyright-text">&copy; 2026 AITCAP. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Ecosistema</h4>
+                    <ul>
+                        <li><a href="../next/next.html">AITCAP Next</a></li>
+                        <li><a href="../private/private.html">Private & Institutional</a></li>
+                        <li><a href="../corporate/corporate.html">Corporate</a></li>
+                        <li><a href="../tech/tech.html">Tech & Global</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>Rosario, Santa Fe, Argentina</p>
+                    <p>+54 9 3415 97-5693</p>
+                    <div class="socials">
+                        <a href="#">LI</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-regulators">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.argentina.gob.ar/cnv" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-1.png" alt="Comisión Nacional de Valores" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.byma.com.ar" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-2.png" alt="BYMA" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.mae.com.ar" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-3.png" alt="MAE" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://balanz.com/" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-4.png" alt="Balanz" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://matbarofex.com.ar/" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-5.png" alt="Matba Rofex" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.bcr.com.ar/" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-6.png" alt="Bolsa de Comercio de Rosario" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cadab.org.ar" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-7.png" alt="Cámara de Agentes de Bolsa" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://lbo.com" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-8.png" alt="LBO" loading="lazy">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../global.js" defer></script>
+    <script src="tech.js" defer></script>
+
+</body>
+</html>

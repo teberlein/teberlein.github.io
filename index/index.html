@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITCAP | Finance Lab</title>
+    <meta name="description" content="Ecosistema financiero que integra educación, research, banca privada y corporativa.">
+    <link rel="icon" type="image/png" href="../assets/isotipo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="index.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="../index/index.html" class="logo-container">
+                <img src="../assets/isotipo.png" alt="AITCAP Icon" class="logo-iso">
+                <img src="../assets/logotipo-text.png" alt="AITCAP" class="logo-text">
+            </a>
+            
+            <ul class="nav-links desktop-only">
+                <li><a href="../index/index.html" class="active-link">Inicio</a></li>
+                <li><a href="../next/next.html">Next</a></li>
+                <li><a href="../private/private.html">Private & Institutional</a></li>
+                <li><a href="../corporate/corporate.html">Corporate</a></li>
+                <li><a href="../tech/tech.html">Tech & Global</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <a href="#contacto" class="btn-header-contact desktop-only">Contacto</a>
+                <button class="hamburger" id="menuToggle" aria-label="Menú">
+                    <span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-links">
+            <a href="../index/index.html" class="m-link highlight">Inicio</a>
+            <a href="../next/next.html" class="m-link">Next</a>
+            <a href="../private/private.html" class="m-link">Private & Institutional</a>
+            <a href="../corporate/corporate.html" class="m-link">Corporate</a>
+            <a href="../tech/tech.html" class="m-link">Tech & Global</a>
+        </div>
+        <div class="mobile-footer">
+            <p>Partners Oficiales</p>
+            <div class="partners-row"><span>BALANZ</span> / <span>IOL</span></div>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-bg" id="heroBg"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge reveal">FINANCE LAB</span>
+                    <h1 class="hero-title reveal">
+                        SIMPLIFICAMOS <br>
+                        <span class="text-gradient">TUS FINANZAS</span>
+                    </h1>
+                    <p class="hero-text reveal">
+                        Acompañamos a personas y empresas a mejorar sus finanzas.
+                    </p>
+                    <div class="hero-actions reveal">
+                        <a href="#ecosistema" class="btn btn-primary">Ver propuestas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <section id="problema" class="problem-section">
+            <div class="problem-container">
+                <div class="problem-content">
+                    <h2 class="problem-line line-1">Hoy hay más opciones que nunca</h2>
+                    <h2 class="problem-line line-2">Elegir bien es cada vez más difícil</h2>
+                    <h2 class="problem-line line-3">En AITCAP te ayudamos a tomar  <span class="highlight-criterio">mejores decisiones</span></h2>
+                </div>
+            </div>
+        </section>
+
+        <section id="ecosistema" class="badges-section">
+            <div class="badges-layout">
+                
+                <div class="ecosystem-intro">
+                    <span class="subtitle" data-scroll>NUESTRO ECOSISTEMA</span>
+                    <h2 data-scroll>UNA PROPUESTA PARA CADA PERFIL</h2>
+                </div>
+
+                <div class="badges-carousel-area">
+                    
+                    <button class="nav-arrow prev-arrow" aria-label="Anterior">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="nav-arrow next-arrow" aria-label="Siguiente">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+
+                    <div class="badges-wrapper">
+                        
+                        <div class="badge-card active" data-index="0">
+                            <div class="badge-content">
+                                <div class="badge-tags-wrapper">
+                                    <span class="badge-tag">Para personas</span>
+                                </div>
+                                <h3 class="badge-title">AITCAP NEXT</h3>
+                                <span class="product-subtitle">Invertir de forma ordenada</span>
+                                <p class="badge-desc">Educación financiera, análisis y acompañamiento para invertir de manera clara y profesional.</p>
+                                <a href="../next/next.html" class="btn btn-primary btn-badge">Conocer NEXT</a>
+                            </div>
+                            <div class="badge-bg bg-next"></div>
+                        </div>
+
+                        <div class="badge-card" data-index="1">
+                            <div class="badge-content">
+                                <div class="badge-tags-wrapper">
+                                    <span class="badge-tag">Para personas y empresas</span>
+                                </div>
+                                <h3 class="badge-title">AITCAP Private & Institutional</h3>
+                                <span class="product-subtitle">Inversiones financieras avanzadas</span>
+                                <p class="badge-desc">Asesoramiento en inversiones financieras con estrategias a medida y acompañamiento profesional 1 a 1.</p>
+                                <a href="../private/private.html" class="btn btn-primary btn-badge">Conocer P&I</a>
+                            </div>
+                            <div class="badge-bg bg-private"></div>
+                        </div>
+
+                        <div class="badge-card" data-index="2">
+                            <div class="badge-content">
+                                <div class="badge-tags-wrapper">
+                                    <span class="badge-tag">Para empresas</span>
+                                </div>
+                                <h3 class="badge-title">AITCAP Corporate</h3>
+                                <span class="product-subtitle">Finanzas corporativas</span>
+                                <p class="badge-desc">Asesoramiento en finanzas corporativas: financiamiento, estructura financiera y gestión eficiente de tesorería.</p>
+                                <a href="../corporate/corporate.html" class="btn btn-primary btn-badge">Conocer Corporate</a>
+                            </div>
+                            <div class="badge-bg bg-corp"></div>
+                        </div>
+
+                        <div class="badge-card" data-index="3">
+                            <div class="badge-content">
+                                <div class="badge-tags-wrapper">
+                                    <span class="badge-tag">Para personas</span>
+                                </div>
+                                <h3 class="badge-title">AITCAP TECH & GLOBAL</h3>
+                                <span class="product-subtitle">Profesionales globales</span>
+                                <p class="badge-desc">Soluciones financieras para profesionales y equipos tech que operan con ingresos en el exterior.</p>
+                                <a href="../tech/tech.html" class="btn btn-primary btn-badge">Conocer Tech & Global</a>
+                            </div>
+                            <div class="badge-bg bg-tech"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                        <span class="indicator" data-slide="3"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="diferenciales" class="diferenciales section-padding">
+            <div class="container">
+                <div class="diff-header center" data-scroll>
+                    <h2 class="diff-title">Por qué AITCAP</h2>
+                </div>
+                
+                <div class="diff-grid-layout">
+                    <div class="diff-item">
+                        <h3>Claridad</h3>
+                        <p>Ordenamos la información y te ayudamos a entender cada decisión.</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h3>Acompañamiento profesional</h3>
+                        <p>Trabajamos de forma cercana, entendiendo tu situación y acompañando cada paso.</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h3>Propuesta personalizada</h3>
+                        <p>Diseñamos soluciones específicas según tu etapa, objetivos y tipo de capital.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metodologia" class="method-section">
+            <div class="container method-grid">
+                
+                <div class="method-sticky-col">
+                    <div class="method-header">
+                        <span class="subtitle">NUESTRO MÉTODO</span>
+                        <h2>¿CÓMO TRABAJAMOS?</h2>
+                    </div>
+                    
+                    <ul class="method-nav">
+                        <li class="nav-step active" data-target="step-1">
+                            <span class="step-num">01</span> Entendemos
+                        </li>
+                        <li class="nav-step" data-target="step-2">
+                            <span class="step-num">02</span> Diseñamos
+                        </li>
+                        <li class="nav-step" data-target="step-3">
+                            <span class="step-num">03</span> Acompañamos
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="method-scroll-col">
+                    
+                    <div class="method-block" id="step-1">
+                        <div class="block-content">
+                            <h3>Entendemos</h3>
+                            <p>Analizamos tu situación, objetivos y tolerancia al riesgo.</p>
+                        </div>
+                    </div>
+
+                    <div class="method-block" id="step-2">
+                        <div class="block-content">
+                            <h3>Diseñamos</h3>
+                            <p>Evaluamos alternativas y construimos una estrategia acorde a tu perfil.</p>
+                        </div>
+                    </div>
+
+                    <div class="method-block" id="step-3">
+                        <div class="block-content">
+                            <h3>Acompañamos</h3>
+                            <p>Implementamos a través de plataformas reguladas con seguimiento constante.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contacto" class="cta-section">
+            <div class="container">
+                <div class="cta-grid">
+                    <div class="cta-card" data-scroll>
+                        <h2>HABLEMOS DE TU SITUACIÓN</h2>
+                        <p>Ya seas una persona, una empresa o un profesional que trabaja de forma global, podemos ayudarte a encontrar una propuesta acorde a tus necesidades.</p>
+                        <div class="cta-buttons">
+                            <a href="https://wa.me/5493415975693?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20AITCAP" target="_blank" class="btn btn-white">Hablemos por WhatsApp</a>
+                        </div>
+                        <small class="disclaimer-cta">Operamos a través de Agentes de Liquidación y Compensación regulados por CNV.</small>
+                    </div>
+                    <div class="cta-card cta-corporate" data-scroll>
+                        <h2>Potenciá tu empresa</h2>
+                        <p>Diseñamos propuestas integrales que combinan finanzas corporativas, beneficios exclusivos para colaboradores, capacitaciones in-company y mucho más.</p>
+                        <div class="cta-buttons">
+                            <a href="https://wa.me/5493415975693?text=Hola%2C%20me%20interesa%20la%20propuesta%20corporativa%20integral%20de%20AITCAP" target="_blank" class="btn btn-outline-white">Solicitar propuesta corporativa</a>
+                        </div>
+                        <small class="disclaimer-cta">Operamos a través de Agentes de Liquidación y Compensación regulados por CNV.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <a href="https://wa.me/5493415975693?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20AITCAP" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.506-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.084 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+        </a>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="../index/index.html" class="logo-container footer-logo">
+                        <img src="../assets/isotipo.png" alt="AITCAP Icon" class="logo-iso">
+                        <img src="../assets/logotipo-text.png" alt="AITCAP" class="logo-text">
+                    </a>
+                    <p>Finance Lab.</p>
+                    <p class="copyright-text">&copy; 2026 AITCAP. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Ecosistema</h4>
+                    <ul>
+                        <li><a href="../next/next.html">AITCAP Next</a></li>
+                        <li><a href="../private/private.html">Private & Institutional</a></li>
+                        <li><a href="../corporate/corporate.html">Corporate</a></li>
+                        <li><a href="../tech/tech.html">Tech & Global</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>Rosario, Santa Fe, Argentina</p>
+                    <p>+54 9 3415 97-5693</p>
+                    <div class="socials">
+                        <a href="#">LI</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-regulators">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.argentina.gob.ar/cnv" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-1.png" alt="Comisión Nacional de Valores" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.byma.com.ar" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-2.png" alt="BYMA" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.mae.com.ar" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-3.png" alt="MAE" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://balanz.com/" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-4.png" alt="Balanz" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://matbarofex.com.ar/" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-5.png" alt="Matba Rofex" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.bcr.com.ar/" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-6.png" alt="Bolsa de Comercio de Rosario" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cadab.org.ar" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-7.png" alt="Cámara de Agentes de Bolsa" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://lbo.com" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-8.png" alt="LBO" loading="lazy">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../global.js" defer></script>
+    <script src="index.js" defer></script>
+</body>
+</html>

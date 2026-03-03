@@ -1,0 +1,657 @@
+/* =========================================
+   AITCAP — global.css
+   Contiene: Reset, Variables, Tipografía,
+   Utilidades, Layout base, Navbar, Footer,
+   Botones, WhatsApp float, Animaciones
+   compartidas, Media queries base.
+   ========================================= */
+
+
+/* =========================================
+   1. VARIABLES & RESET (GLOBAL)
+   ========================================= */
+:root {
+    --bg-dark: #050505;
+    --bg-card: #0F0F0F;
+    --primary: #501DC8;
+    --primary-glow: rgba(80, 29, 200, 0.4);
+    --accent: #12BAAD;
+    --accent-glow: rgba(18, 186, 173, 0.4);
+    --text-white: #FFFFFF;
+    --text-gray: #A1A1AA;
+    --border-light: rgba(255, 255, 255, 0.1);
+
+    --font-head: 'Montserrat', sans-serif;
+    --font-body: 'Manrope', sans-serif;
+
+    --nav-height: 80px;
+
+    /* Variables por página (declaradas aquí para disponibilidad global) */
+    --next-bg-gradient: radial-gradient(circle at 80% 20%, rgba(18, 186, 173, 0.15) 0%, #050505 60%);
+    --private-bg-gradient: radial-gradient(circle at 20% 50%, #2a0f6b 0%, #050505 70%);
+    --corp-bg-gradient: radial-gradient(circle at 30% 20%, #0B162C 0%, #03060D 70%);
+    --corp-accent: #3b82f6;
+    --corp-accent-light: #93c5fd;
+    --tech-bg-gradient: radial-gradient(circle at 75% 25%, #2e1065 0%, #030305 70%);
+    --tech-accent: #818cf8;
+    --tech-accent-dark: #4f46e5;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+/* =========================================
+   2. TIPOGRAFÍA & UTILIDADES (GLOBAL)
+   ========================================= */
+h1, h2, h3, h4 { font-family: var(--font-head); text-transform: uppercase; font-weight: 800; letter-spacing: -0.02em; }
+
+/* Gradiente de texto base (home) */
+.text-gradient {
+    background: linear-gradient(90deg, var(--accent) 0%, #FFFFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    display: block;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.section-padding { padding: 100px 0; }
+.center { text-align: center; margin-bottom: 4rem; }
+.mt-4 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 1rem; }
+
+/* Bloque de texto centrado (usado en next, corp, private) */
+.center-text-block {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   3. BOTONES (GLOBAL)
+   Usados en todas las páginas
+   ========================================= */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 14px 28px; font-size: 0.9rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em; border-radius: 4px;
+    transition: all 0.3s ease; cursor: pointer;
+}
+
+.btn-primary { background: var(--primary); color: white; border: 1px solid var(--primary); }
+.btn-primary:hover { background: #3c1499; box-shadow: 0 0 20px var(--primary-glow); }
+
+.btn-outline { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: white; }
+.btn-outline:hover { border-color: white; background: rgba(255,255,255,0.05); }
+
+.btn-white { background: white; color: var(--primary); }
+.btn-white:hover { background: #eeeeee; box-shadow: 0 0 20px white; }
+
+.btn-outline-white { border: 1px solid white; color: white; }
+.btn-outline-white:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #000;
+    box-shadow: 0 0 20px rgba(18, 186, 173, 0.4);
+}
+
+/* Botón Contacto Header */
+.btn-header-contact {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 8px 16px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    margin-right: 15px;
+    display: none; /* Hidden on mobile */
+    visibility: hidden;
+}
+.btn-header-contact:hover {
+    background: var(--accent);
+    color: #000;
+}
+
+
+/* =========================================
+   4. NAVBAR (GLOBAL)
+   Presente en todas las páginas
+   ========================================= */
+.navbar {
+    position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height);
+    background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(12px);
+    z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-inner { height: 100%; display: flex; justify-content: space-between; align-items: center; }
+
+.logo-container { display: flex; align-items: center; gap: 10px; height: 35px; }
+.logo-iso { height: 100%; width: auto; }
+.logo-text { height: 60%; width: auto; margin-top: 2px; }
+
+.nav-links { display: none; }
+.nav-links li a { font-size: 0.85rem; font-weight: 600; color: var(--text-gray); text-transform: uppercase; letter-spacing: 0.05em; }
+.nav-links li a:hover { color: white; }
+
+.nav-controls { display: flex; gap: 0.5rem; align-items: center; }
+.phone-icon { color: white; opacity: 0.8; padding: 0 10px; }
+
+.hamburger { background: none; border: none; cursor: pointer; width: 30px; height: 20px; position: relative; }
+.hamburger span { position: absolute; width: 100%; height: 2px; background: white; left: 0; transition: 0.3s; }
+.hamburger span:first-child { top: 0; }
+.hamburger span:last-child { bottom: 0; }
+.hamburger.active span:first-child { top: 9px; transform: rotate(45deg); }
+.hamburger.active span:last-child { bottom: 9px; transform: rotate(-45deg); }
+
+/* Active link: variante base (next) */
+.active-link {
+    color: var(--accent) !important;
+    position: relative;
+}
+.active-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+}
+
+/* Active link: variante private */
+.active-link-private {
+    color: var(--primary) !important;
+    font-weight: 700 !important;
+    position: relative;
+}
+.active-link-private::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Active link: variante corporate */
+.active-link-corp {
+    color: var(--corp-accent) !important;
+    font-weight: 700 !important;
+    position: relative;
+}
+.active-link-corp::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--corp-accent);
+}
+
+/* Active link: variante tech */
+.active-link-tech {
+    color: var(--tech-accent) !important;
+    font-weight: 700 !important;
+    position: relative;
+}
+.active-link-tech::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--tech-accent);
+}
+
+
+/* =========================================
+   5. MOBILE DRAWER (GLOBAL)
+   Presente en todas las páginas
+   ========================================= */
+.mobile-menu {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: var(--bg-dark); z-index: 90;
+    padding-top: var(--nav-height);
+    transform: translateY(-100%); transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 2rem;
+}
+.mobile-menu.open { transform: translateY(0); }
+.mobile-links { display: flex; flex-direction: column; align-items: center; gap: 2rem; padding-top: 3rem; }
+.m-link { font-family: var(--font-head); font-size: 1.5rem; color: white; font-weight: 800; }
+.m-link.highlight { color: var(--accent); }
+.mobile-footer { text-align: center; color: var(--text-gray); }
+.partners-row span { font-weight: 700; color: white; margin: 0 0.5rem; }
+
+/* Variantes highlight por página */
+.m-link.highlight-private { color: var(--primary) !important; }
+.m-link.highlight-corp    { color: var(--corp-accent) !important; }
+.m-link.highlight-tech    { color: var(--tech-accent) !important; }
+
+
+/* =========================================
+   6. FOOTER (GLOBAL)
+   Presente en todas las páginas
+   ========================================= */
+.main-footer { border-top: 1px solid var(--border-light); padding: 4rem 0 2rem; background: #020202; font-size: 0.9rem; color: #666; }
+.footer-top { display: grid; gap: 2rem; margin-bottom: 3rem; }
+
+/* Ajuste Logo Footer */
+.footer-logo {
+    margin-bottom: 1rem;
+    height: 40px;
+}
+
+.footer-nav h4, .footer-contact h4 { color: white; margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
+.footer-nav ul li { margin-bottom: 0.8rem; }
+.footer-nav a:hover { color: #eeeeee; }
+.copyright-text { margin-top: 2rem; font-size: 0.8rem; opacity: 0.5; }
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.partners-logos {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.socials { display: flex; gap: 1rem; margin-top: 1rem; }
+.socials a { color: var(--text-gray); font-size: 0.85rem; font-weight: 600; }
+.socials a:hover { color: white; }
+
+/* =========================================
+   PARTNERS & REGULADORES (FOOTER)
+   ========================================= */
+.footer-regulators {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+}
+
+.regulator-logo {
+    display: block;
+    opacity: 0.4;
+    filter: grayscale(100%) brightness(150%);
+    transition: all 0.4s ease;
+}
+
+.regulator-logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.regulator-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%) brightness(100%);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   7. HERO BASE (GLOBAL)
+   Estructura compartida por todas las páginas
+   ========================================= */
+.hero {
+    min-height: 100vh; display: flex; align-items: center; position: relative;
+    padding-top: var(--nav-height); overflow: hidden;
+}
+.hero-bg {
+    transform: scale(1.1); /* 10% más grande en todos los lados */
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 70% 20%, #150835 0%, #050505 60%); z-index: -1;
+}
+.hero-bg::after {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
+.hero-content { max-width: 800px; position: relative; z-index: 2; }
+
+/* Badge (compartido por todas las páginas) */
+.badge {
+    display: inline-block; padding: 6px 12px; border: 1px solid var(--accent);
+    color: var(--text-white); font-size: 0.75rem; letter-spacing: 0.1em;
+    border-radius: 50px; margin-bottom: 1.5rem; background: var(--accent); font-weight: 700;
+}
+
+.hero-title { font-size: 3rem; line-height: 1.1; margin-bottom: 1.5rem; }
+.hero-text { font-size: 1.1rem; color: var(--text-gray); max-width: 500px; margin-bottom: 2.5rem; }
+/* hero-subtitle es alias de hero-text pero con color blanco (next) */
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-white);
+    max-width: 600px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.scroll-indicator {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-gray);
+}
+.scroll-indicator .line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--accent), transparent); }
+
+
+/* =========================================
+   8. PROCESO / TIMELINE (GLOBAL)
+   Usado en next.html e index.html
+   ========================================= */
+.timeline { display: flex; flex-direction: column; gap: 2rem; position: relative; }
+.step { background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-light); border-radius: 8px; position: relative; z-index: 2; }
+.step-number { font-family: var(--font-head); font-size: 3rem; color: rgba(255,255,255,0.05); position: absolute; top: 1rem; right: 1rem; font-weight: 900; }
+.step h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.25rem; }
+.step p { color: var(--text-gray); }
+.step-line { display: none; }
+
+
+/* =========================================
+   9. CTA SECTION (GLOBAL)
+   Presente en todas las páginas
+   ========================================= */
+.cta-section { padding: 50px 0 100px; }
+.cta-card {
+    background: linear-gradient(135deg, var(--primary) 0%, #2a0a75 100%);
+    padding: 4rem 2rem; text-align: center; border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.cta-card h2 { font-size: 2rem; margin-bottom: 1rem; }
+.cta-card p { max-width: 600px; margin: 0 auto 2.5rem; color: rgba(255,255,255,0.9); }
+.cta-buttons { display: flex; flex-direction: column; gap: 1rem; align-items: center; justify-content: center; }
+.disclaimer-cta { display: block; margin-top: 2rem; font-size: 0.7rem; opacity: 0.6; }
+
+/* Subtítulo CTA (usado en next, private, corp, tech) */
+.subtitle-cta {
+    display: block;
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+/* Grupos de botones CTA (private, corp, tech) */
+.cta-group-primary {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.micro-copy {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    opacity: 0.7;
+}
+
+.cta-group-secondary {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.link-secondary {
+    color: var(--text-gray);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid transparent;
+}
+.link-secondary:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+.sep { color: rgba(255,255,255,0.2); }
+
+
+/* =========================================
+   10. WHATSAPP FLOAT (GLOBAL)
+   Presente en todas las páginas
+   ========================================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.1);
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,255,100,0.4);
+    background-color: #20bd5a;
+}
+
+
+/* =========================================
+   11. ANIMACIONES COMPARTIDAS (GLOBAL)
+   Clases usadas en 2+ páginas
+   ========================================= */
+
+/* .reveal: usado en TODAS las páginas para animación de entrada hero */
+/* (clase target del gsap hero animation en global.js) */
+
+/* reveal-up: usado en corporate y tech */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* reveal-horizontal: usado en corporate */
+.reveal-horizontal {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+/* Clases de delay compartidas (corporate & tech) */
+/* Se usan en JS para calcular el delay dinámicamente */
+
+/* ux-text / ux-visual: Private & todas las páginas vía premiumObserver */
+.ux-text,
+.ux-visual {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.ux-visual {
+    transform: translateY(40px) scale(0.95);
+}
+
+.ux-text.is-active,
+.ux-visual.is-active {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* Micro-animación flotación continua */
+@keyframes premiumFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+}
+
+.ux-float.is-active {
+    animation: premiumFloat 8s ease-in-out infinite 1s;
+}
+
+/* Parallax base */
+.ux-parallax {
+    will-change: transform;
+    transition: transform 0.1s linear;
+}
+
+/* dynamic-underline: corporate */
+.dynamic-underline {
+    position: relative;
+    display: inline-block;
+}
+.dynamic-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: left center;
+}
+.dynamic-underline.is-visible::after {
+    transform: scaleX(1);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Accesibilidad: Desactivar si el usuario prefiere movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .ux-text, .ux-visual {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .ux-float.is-active {
+        animation: none !important;
+    }
+    .ux-parallax {
+        transform: none !important;
+    }
+}
+
+/* bg-darker: fondo alternativo usado en next */
+.bg-darker { background: #080808; }
+
+
+/* =========================================
+   12. MEDIA QUERIES GLOBALES
+   ========================================= */
+
+/* --- Tablet y Desktop: Navbar --- */
+@media (min-width: 768px) {
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-controls .hamburger { display: none; }
+
+    /* Hero */
+    .hero-title { font-size: 4.5rem; }
+    .hero-actions { flex-direction: row; }
+
+    /* Footer */
+    .footer-top { grid-template-columns: 1.5fr 1fr 1fr; }
+    .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
+
+    /* Timeline desktop */
+    .timeline { flex-direction: row; align-items: flex-start; gap: 0; }
+    .step { flex: 1; text-align: center; border: none; background: transparent; padding: 0 1rem; }
+    .step-number { position: relative; top: auto; right: auto; margin: 0 auto 1rem; font-size: 4rem; color: rgba(255,255,255,0.1); }
+    .step-line { display: block; width: 1px; height: 100px; background: var(--border-light); margin-top: 2rem; transform: rotate(15deg); }
+
+    /* CTA Buttons */
+    .cta-buttons { flex-direction: row; }
+}
+
+@media (min-width: 1024px) {
+    .hero-title { font-size: 5.5rem; }
+}
+
+/* --- Footer regulators responsive --- */
+@media (max-width: 900px) {
+    .footer-regulators {
+        gap: 2rem;
+        margin-top: 2.5rem;
+        padding-top: 1.5rem;
+    }
+    .regulator-logo img { height: 35px; }
+}
+
+@media (max-width: 768px) {
+    .footer-regulators { gap: 1.5rem; }
+    .regulator-logo { opacity: 0.6; }
+    .regulator-logo img { height: 30px; }
+
+    /* WhatsApp float */
+    .whatsapp-float { width: 50px; height: 50px; bottom: 20px; left: 20px; }
+    .whatsapp-float svg { width: 28px; height: 28px; }
+
+    /* Hero title mobile */
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.1;
+        word-break: break-word;
+        hyphens: auto;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-title { font-size: 1.8rem; }
+}

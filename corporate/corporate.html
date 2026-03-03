@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITCAP Corporate</title>
+    <meta name="description" content="Asesoramiento integral en finanzas corporativas, estructuración de deuda, valuación de empresas y M&A para decisiones estructurales.">
+    <link rel="icon" type="image/png" href="../assets/isotipo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="corporate.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="../index/index.html" class="logo-container">
+                <img src="../assets/isotipo.png" alt="AITCAP Icon" class="logo-iso">
+                <img src="../assets/logotipo-text.png" alt="AITCAP" class="logo-text">
+            </a>
+            
+            <ul class="nav-links desktop-only">
+                <li><a href="../index/index.html">Inicio</a></li>
+                <li><a href="../next/next.html">Next</a></li>
+                <li><a href="../private/private.html">Private & Institutional</a></li>
+                <li><a href="../corporate/corporate.html" class="active-link-corp">Corporate</a></li>
+                <li><a href="../tech/tech.html">Tech & Global</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <a href="#contacto" class="btn-header-contact desktop-only">Contacto</a>
+                <button class="hamburger" id="menuToggle" aria-label="Menú">
+                    <span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-links">
+            <a href="../index/index.html" class="m-link">Inicio</a>
+            <a href="../next/next.html" class="m-link">Next</a>
+            <a href="../private/private.html" class="m-link">Private & Institutional</a>
+            <a href="../corporate/corporate.html" class="m-link highlight-corp">Corporate</a>
+            <a href="../tech/tech.html" class="m-link">Tech & Global</a>
+        </div>
+        <div class="mobile-footer">
+            <p>Partners Oficiales</p>
+            <div class="partners-row"><span>BALANZ</span> / <span>LBO</span></div>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero corp-hero">
+            <div class="hero-bg" id="corpHeroBg"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge reveal badge-corp">AITCAP CORPORATE</span>
+                    <h1 class="hero-title reveal">
+                        FINANZAS<br>
+                        <span class="text-gradient-corp">CORPORATIVAS</span>
+                    </h1>
+                    <p class="hero-text reveal corp-lead">
+                        Asesoramiento financiero a empresas para decisiones estratégicas.
+                    </p>
+                    <div class="hero-actions reveal">
+                        <a href="https://wa.me/5493415975693?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20AITCAP%20Corporate" target="_blank" class="btn btn-primary btn-corp">Solicitar diagnóstico</a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="line line-corp"></div>
+            </div>
+        </section>
+
+        <section class="corp-profile-section">
+            <div class="container">
+                <div class="corp-text-block center-text-block" data-scroll>
+                    <h2 class="dynamic-underline">¿PARA QUIÉN ES CORPORATE?</h2>
+                    <div class="spacer-small"></div>
+                    <p class="corp-profile-intro reveal-horizontal delay-1">
+                        Trabajamos con empresas que enfrentan decisiones financieras relevantes y necesitan análisis y acompañamiento técnico.
+                    </p>
+                </div>
+                
+                <div class="corp-profile-grid">
+                    <div class="corp-profile-card reveal-up delay-1">
+                        <div class="card-side-line"></div>
+                        <h4>Empresas en expansión</h4>
+                        <p>Que necesitan estructurar financiamiento y proyectar crecimiento.</p>
+                    </div>
+                    
+                    <div class="corp-profile-card reveal-up delay-2">
+                        <div class="card-side-line"></div>
+                        <h4>Empresas en transición</h4>
+                        <p>Procesos de reestructuración, reorganización o redefinición estratégica.</p>
+                    </div>
+                    
+                    <div class="corp-profile-card reveal-up delay-3">
+                        <div class="card-side-line"></div>
+                        <h4>Accionistas y socios</h4>
+                        <p>Que requieren valuación, análisis independiente o planificación de operaciones.</p>
+                    </div>
+                    
+                    <div class="corp-profile-card reveal-up delay-4">
+                        <div class="card-side-line"></div>
+                        <h4>Direcciones financieras</h4>
+                        <p>Que buscan soporte técnico especializado en momentos clave.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="corp-intro-expanded">
+            <div class="container corp-grid">
+                <div class="corp-text-col">
+                    <h2 class="dynamic-underline">ASESORAMIENTO ESTRATÉGICO</h2>
+                    <div class="spacer-small"></div>
+                    <p class="reveal-horizontal delay-1">
+                        Trabajamos junto a la dirección de la empresa para ordenar, estructurar y optimizar sus decisiones financieras.
+                    </p>
+                 </div>
+
+                 <div class="corp-visual-col reveal-horizontal delay-2">
+                    <svg class="tech-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="100,30 170,70 100,110 30,70" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.9"/>
+                        <polygon points="100,70 170,110 100,150 30,110" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+                        <polygon points="100,110 170,150 100,190 30,150" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+                        
+                        <line x1="30" y1="70" x2="30" y2="150" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.4"/>
+                        <line x1="170" y1="70" x2="170" y2="150" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.4"/>
+                        <line x1="100" y1="110" x2="100" y2="190" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                        <line x1="100" y1="30" x2="100" y2="110" stroke="currentColor" stroke-width="1" opacity="0.8"/>
+                        
+                        <circle cx="100" cy="70" r="4" fill="currentColor"/>
+                        <circle cx="100" cy="110" r="3" fill="currentColor" opacity="0.6"/>
+                        <circle cx="100" cy="30" r="2" fill="currentColor" opacity="0.8"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <div class="corp-areas-wrapper">
+            
+            <section class="corp-area-expanded">
+                <div class="container corp-grid">
+                    <div class="corp-text-col">
+                        <span class="corp-area-label reveal-horizontal">01 / ESTRUCTURA</span>
+                        <h3 class="dynamic-underline">Estructuración y Reestructuración de Deuda</h3>
+                        <div class="spacer-small"></div>
+                        <p class="reveal-horizontal delay-1">Analizamos la estructura actual de pasivos y diseñamos alternativas que mejoren plazos, costos y la sostenibilidad financiera de la empresa.</p>
+                    </div>
+                    <div class="corp-visual-col reveal-horizontal delay-2">
+                        <svg class="tech-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="20" y1="50" x2="180" y2="50" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                            <line x1="20" y1="100" x2="140" y2="100" stroke="currentColor" stroke-width="2" opacity="0.8"/>
+                            <line x1="20" y1="150" x2="100" y2="150" stroke="currentColor" stroke-width="4"/>
+                            <circle cx="180" cy="50" r="3" fill="currentColor" opacity="0.5"/>
+                            <circle cx="140" cy="100" r="3" fill="currentColor" opacity="0.8"/>
+                            <circle cx="100" cy="150" r="4" fill="currentColor"/>
+                            <path d="M 140 100 Q 160 100 160 75 T 180 50" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <section class="corp-area-expanded alt-bg">
+                <div class="container corp-grid reverse">
+                    <div class="corp-text-col">
+                        <span class="corp-area-label reveal-horizontal">02 / PROYECCIÓN</span>
+                        <h3 class="dynamic-underline">Valuación de Empresas y Proyectos</h3>
+                        <div class="spacer-small"></div>
+                        <p class="reveal-horizontal delay-1">Elaboramos modelos de valuación y proyección que permiten estimar escenarios y evaluar oportunidades.</p>
+                    </div>
+
+                    <div class="corp-visual-col reveal-horizontal delay-2">
+                        <svg class="tech-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="100" y1="20" x2="100" y2="180" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                            <line x1="20" y1="100" x2="180" y2="100" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+
+                            <polyline points="40,120 80,60 120,130 160,80" fill="none" stroke="currentColor" stroke-width="2" opacity="0.9"/>
+
+                            <circle cx="40" cy="120" r="3.5" fill="currentColor"/>
+                            <circle cx="80" cy="60" r="3.5" fill="currentColor"/>
+                            <circle cx="120" cy="130" r="3.5" fill="currentColor"/>
+                            <circle cx="160" cy="80" r="3.5" fill="currentColor"/>
+
+                            <line x1="80" y1="60" x2="100" y2="60" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"/>
+                            <line x1="80" y1="60" x2="80" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"/>
+                            
+                            <line x1="120" y1="130" x2="100" y2="130" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"/>
+                            <line x1="120" y1="130" x2="120" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <section class="corp-area-expanded">
+                <div class="container corp-grid">
+                    <div class="corp-text-col">
+                        <span class="corp-area-label reveal-horizontal">03 / CONTEXTO</span>
+                        <h3 class="dynamic-underline">Research Sectorizado</h3>
+                        <div class="spacer-small"></div>
+                        <p class="reveal-horizontal delay-1">Análisis específico por industria, contexto competitivo y variables macroeconómicas que impactan directamente en el negocio.</p>
+                    </div>
+                    <div class="corp-visual-col reveal-horizontal delay-2">
+                        <svg class="tech-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="100" y1="100" x2="40" y2="50" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+                            <line x1="100" y1="100" x2="160" y2="60" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+                            <line x1="100" y1="100" x2="60" y2="160" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                            <line x1="100" y1="100" x2="150" y2="150" stroke="currentColor" stroke-width="2" opacity="0.8"/>
+                            <circle cx="100" cy="100" r="6" fill="currentColor"/>
+                            <circle cx="40" cy="50" r="3" fill="currentColor" opacity="0.4"/>
+                            <circle cx="160" cy="60" r="4" fill="currentColor" opacity="0.6"/>
+                            <circle cx="60" cy="160" r="3" fill="currentColor" opacity="0.3"/>
+                            <circle cx="150" cy="150" r="5" fill="currentColor" opacity="0.8"/>
+                            <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.5"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <section class="corp-area-expanded alt-bg">
+                <div class="container corp-grid reverse">
+                    <div class="corp-text-col">
+                        <span class="corp-area-label reveal-horizontal">04 / INTEGRACIÓN</span>
+                        <h3 class="dynamic-underline">M&A y Operaciones Estratégicas</h3>
+                        <div class="spacer-small"></div>
+                        <p class="reveal-horizontal delay-1">Acompañamiento en procesos de compra, venta o integración de empresas, con análisis financiero y visión estratégica.</p>
+                    </div>
+                    <div class="corp-visual-col reveal-horizontal delay-2">
+                        <svg class="tech-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="75" cy="100" r="50" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                            <circle cx="125" cy="100" r="50" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.8"/>
+                            <path d="M 100 56.7 A 50 50 0 0 0 100 143.3 A 50 50 0 0 0 100 56.7 Z" fill="currentColor" opacity="0.2"/>
+                            <line x1="0" y1="100" x2="200" y2="100" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.3"/>
+                            <circle cx="100" cy="100" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section id="contacto" class="cta-section">
+            <div class="container">
+                <div class="cta-card cta-corp reveal-horizontal">
+                    <h2>HABLEMOS DE TU ESTRUCTURA FINANCIERA</h2>
+                    <p>Las decisiones financieras relevantes requieren análisis y planificación. Coordinemos una reunión para evaluar tu situación actual.</p>
+                    
+                    <div class="cta-group-primary">
+                        <a href="https://wa.me/5493415975693?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20AITCAP%20Corporate" target="_blank" class="btn btn-primary btn-corp">Solicitar diagnóstico</a>
+                    </div>
+                    
+                    <small class="micro-copy">AITCAP actúa como asesor financiero independiente.</small>
+                </div>
+            </div>
+        </section>
+
+        <a href="https://wa.me/5493415975693?text=Hola%2C%20necesito%20asesoramiento%20Corporate" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.506-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.084 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+        </a>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="../index/index.html" class="logo-container footer-logo">
+                        <img src="../assets/isotipo.png" alt="AITCAP Icon" class="logo-iso">
+                        <img src="../assets/logotipo-text.png" alt="AITCAP" class="logo-text">
+                    </a>
+                    <p>Finance Lab.</p>
+                    <p class="copyright-text">&copy; 2026 AITCAP. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Ecosistema</h4>
+                    <ul>
+                        <li><a href="../next/next.html">AITCAP Next</a></li>
+                        <li><a href="../private/private.html">Private & Institutional</a></li>
+                        <li><a href="../corporate/corporate.html">Corporate</a></li>
+                        <li><a href="../tech/tech.html">Tech & Global</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>Rosario, Santa Fe, Argentina</p>
+                    <p>+54 9 3415 97-5693</p>
+                    <div class="socials">
+                        <a href="#">LI</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-regulators">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.argentina.gob.ar/cnv" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-1.png" alt="Comisión Nacional de Valores" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.byma.com.ar" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-2.png" alt="BYMA" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.mae.com.ar" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-3.png" alt="MAE" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://balanz.com/" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-4.png" alt="Balanz" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://matbarofex.com.ar/" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-5.png" alt="Matba Rofex" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.bcr.com.ar/" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-6.png" alt="Bolsa de Comercio de Rosario" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.cadab.org.ar" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-7.png" alt="Cámara de Agentes de Bolsa" loading="lazy">
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://lbo.com" class="regulator-logo" style="width: 6.5rem;">
+                    <img src="../assets/partner-8.png" alt="LBO" loading="lazy">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../global.js" defer></script>
+    <script src="corporate.js" defer></script>
+</body>
+</html>

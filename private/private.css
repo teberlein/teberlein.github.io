@@ -1,0 +1,491 @@
+/* =========================================
+   AITCAP — private.css
+   Estilos exclusivos de Private & Institutional (private.html).
+   Requiere: global.css cargado previamente.
+   Secciones:
+     1.  Hero Private (fondo, badge, gradiente, botón, scroll line)
+     2.  Sección Perfil ¿Para quién? (private-profile, title, divider, text)
+     3.  Sección Intro (private-intro, grid, lead-text, check-list)
+     4.  Scroll Container Full-Screen (private-section, private-grid,
+         private-text-col, private-visual-col, private-label, divider-small)
+     5.  Visuales Abstractas CSS
+         5a. Visual Orb (gestión)
+         5b. Visual Target / Círculos (estrategia)
+         5c. Visual Grid / Lines (fiscal)
+         5d. Visual Tech / Dots & Line (plataforma)
+         5e. Visual Growth / Bars (corporativo)
+     6.  Sección Corporativa (private-corporate, corp-grid, corp-features, corp-item)
+     7.  CTA Private
+     8.  Active link & highlight (private)
+     9.  Media Queries exclusivas
+   ========================================= */
+
+
+/* =========================================
+   1. HERO PRIVATE
+   ========================================= */
+
+/* Fondo específico del hero Private */
+.private-hero .hero-bg {
+    background: var(--private-bg-gradient);
+}
+
+/* Badge Private: fondo sólido violeta */
+.badge-private {
+    border-color: var(--primary);
+    color: var(--text-white);
+    background: var(--primary); /* Fondo sólido violeta */
+    letter-spacing: 0.15em;
+    font-weight: 700;
+}
+
+/* Gradiente de texto exclusivo Private */
+.text-gradient-private {
+    background: linear-gradient(90deg, #FFFFFF 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Párrafo lead del hero */
+.private-lead {
+    font-size: 1.15rem;
+    color: var(--text-gray);
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+/* Botón primario Private: violeta */
+.btn-private {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+.btn-private:hover {
+    background: #3e15a0;
+    box-shadow: 0 0 25px rgba(80, 29, 200, 0.3);
+}
+
+/* Línea del scroll indicator en color Private */
+.line-private {
+    background: linear-gradient(to bottom, var(--primary), transparent);
+}
+
+
+/* =========================================
+   2. SECCIÓN PERFIL "¿PARA QUIÉN ES P&I?"
+   ========================================= */
+
+.private-profile {
+    background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(80, 29, 200, 0.08) 50%, var(--bg-dark) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    padding: 0;              /* Eliminamos padding excesivo para que el centrado sea puro */
+}
+
+.private-title-large {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.private-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    margin: 0 auto 2rem;
+}
+
+.private-text-large {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   3. SECCIÓN INTRO (Diferencial)
+   ========================================= */
+
+.private-intro {
+    background: #050505;
+    border-bottom: 1px solid rgba(80, 29, 200, 0.1);
+}
+
+.private-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Título destacado de la sección intro */
+.private-title-accent {
+    font-size: 2.5rem;
+    color: white;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+}
+
+/* Texto lead violeta */
+.lead-text {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* Lista de beneficios con borde izquierdo */
+.private-check-list {
+    margin-top: 2rem;
+    border-left: 2px solid rgba(80, 29, 200, 0.3);
+    padding-left: 1.5rem;
+}
+
+.private-check-list li {
+    margin-bottom: 0.8rem;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
+
+/* =========================================
+   4. SCROLL CONTAINER FULL-SCREEN
+   ========================================= */
+
+.private-scroll-container {
+    width: 100%;
+    position: relative;
+    background: #050505;
+}
+
+/* Sección Individual Full Screen */
+.private-section {
+    min-height: 100vh; /* Ocupa toda la pantalla */
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(80, 29, 200, 0.05); /* Separador sutil */
+    overflow: hidden;
+}
+
+/* Alternancia de Fondos Sutil */
+.private-section:nth-child(even) {
+    background: #080410; /* Un tono apenas más violeta/oscuro */
+}
+
+/* Grid Layout 2 columnas */
+.private-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* Invertir orden en secciones pares */
+.private-grid.reverse .private-text-col {
+    order: 2;
+}
+.private-grid.reverse .private-visual-col {
+    order: 1;
+}
+
+/* Columna de Texto */
+.private-text-col {
+    z-index: 2;
+}
+
+/* Label categoría de cada sección */
+.private-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Título H2 dentro de private-section */
+.private-section h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+/* Separador pequeño debajo del H2 */
+.divider-small {
+    width: 40px;
+    height: 2px;
+    background: var(--primary);
+    margin-bottom: 2rem;
+}
+
+/* Párrafo de cada sección */
+.private-section p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+/* Columna Visual */
+.private-visual-col {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Contenedor base de cada visual */
+.abstract-visual {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+/* =========================================
+   5. VISUALES ABSTRACTAS CSS
+   ========================================= */
+
+/* --- 5a. Visual Orb (Gestión de Carteras) --- */
+.visual-orb {
+    background: radial-gradient(circle, rgba(80, 29, 200, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    box-shadow: 0 0 60px rgba(80, 29, 200, 0.1);
+    position: relative;
+}
+.visual-orb::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; height: 80%;
+    border: 1px solid rgba(80, 29, 200, 0.3);
+    border-radius: 50%;
+}
+
+/* --- 5b. Visual Target / Círculos (Estrategia) --- */
+.visual-target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Círculo base — clase CSS, no elemento SVG */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.c1 { width: 300px; height: 300px; border-color: rgba(80, 29, 200, 0.2); }
+.c2 { width: 200px; height: 200px; border-color: rgba(80, 29, 200, 0.4); }
+.c3 { width: 100px; height: 100px; background: rgba(80, 29, 200, 0.2); border: none; }
+
+/* --- 5c. Visual Grid / Lines (Planificación Fiscal) --- */
+.visual-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    transform: skewY(-10deg);
+    opacity: 0.6;
+}
+.grid-line {
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    margin: 0 auto;
+}
+
+/* --- 5d. Visual Tech / Dots & Line (Tecnología Institucional) --- */
+.visual-tech {
+    position: relative;
+}
+.tech-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 10px var(--primary);
+}
+.d1 { top: 20%; left: 20%; }
+.d2 { top: 50%; right: 30%; }
+.d3 { bottom: 30%; left: 40%; }
+.tech-line {
+    position: absolute;
+    top: 20%; left: 20%;
+    width: 100%; height: 100%;
+    border-top: 1px dashed rgba(80, 29, 200, 0.3);
+    border-left: 1px dashed rgba(80, 29, 200, 0.3);
+    transform: rotate(15deg);
+}
+
+/* --- 5e. Visual Growth / Bars (Soluciones Corporativas) --- */
+.visual-growth {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+    height: 300px;
+}
+.growth-bar {
+    width: 40px;
+    background: linear-gradient(to top, rgba(80, 29, 200, 0.1), var(--primary));
+    border-radius: 4px 4px 0 0;
+}
+.b1 { height: 40%; opacity: 0.5; }
+.b2 { height: 70%; opacity: 0.8; }
+.b3 { height: 100%; }
+
+
+/* =========================================
+   6. SECCIÓN CORPORATIVA (dentro de Private)
+   ========================================= */
+
+.private-corporate {
+    background: linear-gradient(135deg, #0b0515 0%, #050505 100%);
+    border-top: 1px solid rgba(80, 29, 200, 0.1);
+}
+
+/* Grid corporativo 2 columnas asimétrico */
+.corp-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Grid de features 2x2 */
+.corp-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.corp-item h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.corp-item p {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+}
+
+
+/* =========================================
+   7. CTA PRIVATE
+   ========================================= */
+
+.cta-private {
+    background: linear-gradient(135deg, #18093d 0%, #000000 100%);
+    border: 1px solid rgba(80, 29, 200, 0.3);
+}
+
+
+/* =========================================
+   8. ACTIVE LINK & HIGHLIGHT (Private)
+   ========================================= */
+
+/* Enlace activo en navbar */
+.active-link-private {
+    color: var(--primary) !important;
+    position: relative;
+}
+.active-link-private::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+}
+
+/* Highlight en menú mobile */
+.highlight-private {
+    color: var(--primary) !important;
+}
+
+
+/* =========================================
+   9. MEDIA QUERIES EXCLUSIVAS PRIVATE
+   ========================================= */
+
+/* --- Perfil: Desktop amplía texto --- */
+@media (min-width: 768px) {
+    .private-text-large { font-size: 1.5rem; }
+}
+
+/* --- Intro grid: Mobile columna simple --- */
+@media (max-width: 900px) {
+    .private-intro-grid,
+    .corp-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .corp-features {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .private-title-accent {
+        font-size: 2rem;
+    }
+
+    /* Visual corporativo sube en mobile */
+    .corp-visual {
+        order: -1;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* --- Scroll sections: Mobile --- */
+@media (max-width: 768px) {
+    .private-section {
+        min-height: auto;
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .private-grid,
+    .private-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    /* Texto siempre primero en mobile */
+    .private-grid.reverse .private-text-col  { order: 1; }
+    .private-grid.reverse .private-visual-col { order: 2; }
+
+    .private-text-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .private-visual-col { height: 250px; }
+    .private-section h2 { font-size: 2rem; }
+
+    /* Perfil mobile */
+    .private-profile { padding: 80px 0; }
+}
