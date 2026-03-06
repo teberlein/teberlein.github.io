@@ -11,35 +11,90 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ===============================================
-    // 1. HOMEPAGE: SECCIÓN PROBLEMA (NARRATIVE SCROLL)
-    // Targets: .problem-section, .line-1, .line-2, .line-3, .highlight-criterio
-    // Clases dinámicas agregadas: 'problem-line dimmed'
+    // 1. HOMEPAGE: SECCIÓN PROBLEMA (NARRATIVA SCROLL)
     // ===============================================
     const problemSection = document.querySelector('.problem-section');
 
     if (problemSection) {
-        let tlProblem = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".problem-section",
-                start: "top top",
-                end: "+=1500",
-                pin: true,          /* Fija la sección mientras dura la animación */
-                scrub: 1,           /* Vincula la animación al scroll */
-                anticipatePin: 1
-            }
+        let mm = gsap.matchMedia();
+
+        // -----------------------------
+        // ANIMACIÓN DESKTOP (> 768px)
+        // -----------------------------
+        mm.add("(min-width: 769px)", () => {
+            
+            // Línea 1 aparece antes de anclarse
+            gsap.to(".line-1", {
+                scrollTrigger: {
+                    trigger: ".problem-section",
+                    start: "top 60%", 
+                    end: "top 20%",   
+                    scrub: 1
+                },
+                opacity: 1,
+                y: 0
+            });
+
+            let tlProblem = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".problem-section",
+                    start: "top top",
+                    end: "+=900",      
+                    pin: true,          
+                    scrub: 1,           
+                    anticipatePin: 1
+                }
+            });
+
+            tlProblem
+                .to({}, { duration: 0.4 }) 
+                .to(".line-1", { opacity: 0.3, className: "problem-line dimmed", duration: 1 })
+                .to(".line-2", { opacity: 1, y: 0, duration: 1 }, "<") 
+                .to(".line-2", { opacity: 0.3, className: "problem-line dimmed", duration: 1 }, "+=0.5")
+                .to(".line-3", { opacity: 1, y: 0, duration: 1 }, "<")
+                .to(".highlight-criterio", { color: "#501DC8", scale: 1.1, duration: 0.5 }, ">")
+                .to({}, { duration: 10 }); // Tiempo extra de "congelamiento" para desktop
         });
 
-        tlProblem
-            .to(".line-1", { opacity: 1, y: 0, duration: 1 })
-            .to(".line-1", { opacity: 0.3, className: "problem-line dimmed", duration: 1 }, "+=0.5")
-            .to(".line-2", { opacity: 1, y: 0, duration: 1 }, "<")
-            .to(".line-2", { opacity: 0.3, className: "problem-line dimmed", duration: 1 }, "+=0.5")
-            .to(".line-3", { opacity: 1, y: 0, duration: 1 }, "<")
-            .to(".highlight-criterio", {
-                color: "#501DC8",
-                scale: 1.1,
-                duration: 0.5
-            }, ">");
+        // -----------------------------
+        // ANIMACIÓN MOBILE (< 768px)
+        // -----------------------------
+        mm.add("(max-width: 768px)", () => {
+            
+            // La línea 1 entra muy rápido apenas asoma en la pantalla
+            gsap.to(".line-1", {
+                scrollTrigger: {
+                    trigger: ".problem-section",
+                    start: "top 80%", 
+                    end: "center 70%",   
+                    scrub: 1
+                },
+                opacity: 1,
+                y: 0
+            });
+
+            let tlProblemMobile = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".problem-section",
+                    // Anclamos cuando el texto llega al CENTRO del celular, requiere menos scroll
+                    start: "center center",
+                    // Clave: Acortamos el recorrido para no cansar el pulgar
+                    end: "+=800",      
+                    pin: true,          
+                    scrub: 1,           
+                    anticipatePin: 1
+                }
+            });
+
+            tlProblemMobile
+                .to({}, { duration: 0.2 }) 
+                .to(".line-1", { opacity: 0.3, className: "problem-line dimmed", duration: 1 })
+                .to(".line-2", { opacity: 1, y: 0, duration: 1 }, "<") 
+                .to(".line-2", { opacity: 0.3, className: "problem-line dimmed", duration: 1 }, "+=0.5")
+                .to(".line-3", { opacity: 1, y: 0, duration: 1 }, "<")
+                .to(".highlight-criterio", { color: "#501DC8", scale: 1.1, duration: 0.5 }, ">")
+                .to({}, { duration: 2 }); // Tiempo extra de "congelamiento" para móvil;
+        });
     }
 
     // ===============================================

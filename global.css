@@ -262,6 +262,28 @@ h1, h2, h3, h4 { font-family: var(--font-head); text-transform: uppercase; font-
 .m-link.highlight-corp    { color: var(--corp-accent) !important; }
 .m-link.highlight-tech    { color: var(--tech-accent) !important; }
 
+/* Ajustes para las redes sociales dentro del menú mobile */
+.mobile-socials {
+    justify-content: center;
+    gap: 2.2rem; /* Un poco más de aire para no equivocarse al tocar */
+}
+
+.mobile-socials a svg {
+    width: 26px; /* Apenas más grandes en touch */
+    height: 26px;
+    opacity: 0.8; /* Suavizamos el color base */
+}
+
+.mobile-socials a:active {
+    opacity: 1;
+    color: white; /* Resplandor al tocar la pantalla */
+}
+
+/* Posicionamiento relativo para anclar la línea */
+.mobile-socials a {
+    position: relative;
+}
+
 
 /* =========================================
    6. FOOTER (GLOBAL)
@@ -299,6 +321,35 @@ h1, h2, h3, h4 { font-family: var(--font-head); text-transform: uppercase; font-
 .socials { display: flex; gap: 1rem; margin-top: 1rem; }
 .socials a { color: var(--text-gray); font-size: 0.85rem; font-weight: 600; }
 .socials a:hover { color: white; }
+
+/* =========================================
+   REDES SOCIALES (FOOTER)
+   ========================================= */
+.socials {
+    display: flex;
+    gap: 1.2rem; /* Espacio entre iconos */
+    align-items: center;
+}
+
+.socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-gray); /* Color gris base */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socials a svg {
+    width: 1.7rem;  /* Tamaño del icono */
+    height: 1.7rem;
+    fill: currentColor; /* Toma el color de la etiqueta <a> automáticamente */
+}
+
+/* Efecto hover: Se vuelve blanco puro y sube 3px */
+.socials a:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+}
 
 /* =========================================
    PARTNERS & REGULADORES (FOOTER)
