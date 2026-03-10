@@ -303,6 +303,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); text-transform: uppercase; font-
 .footer-nav a:hover { color: #eeeeee; }
 .copyright-text { margin-top: 2rem; font-size: 0.8rem; opacity: 0.5; }
 
+.footer-contact a:hover { color: #eeeeee; }
+
 .footer-bottom {
     display: flex;
     flex-direction: column;
